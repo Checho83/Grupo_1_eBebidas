@@ -20,7 +20,7 @@ Sin duda, ebebidas es tu sitio ideal, para festejar de un buen trago, entre amig
 
 Integrantes:
 - Sambuelli Sergio: Ing. en electrónica apasionado de la tecnología, con muchas ganas de aprender del mundo web.
-
+- Tomas Tasat
 
 Referencias:
 https://www.fullescabio.com/
