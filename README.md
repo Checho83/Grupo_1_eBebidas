@@ -22,7 +22,7 @@ Integrantes:
 - Sambuelli Sergio: Ing. en electrónica apasionado de la tecnología, con muchas ganas de aprender del mundo web.
 - Tomas Tasat
 - Joaquín Giudice canteli
-- Doniguian Christian
+- Doniguian Christian: Ing. Aeronautico, fanatico de la mecanica, la electrónica y de los deportes extremos.
 
 Referencias:
 https://www.fullescabio.com/,
