@@ -25,8 +25,8 @@ Integrantes:
 - Doniguian Christian
 
 Referencias:
-https://www.fullescabio.com/
-http://www.puroescabio.com.ar/
-https://www.diageobaracademy.com/es_es/conoce-tu-bebida/nuestras-marcas/
-https://www.beerhouse.mx/new
+https://www.fullescabio.com/,
+http://www.puroescabio.com.ar/,
+https://www.diageobaracademy.com/es_es/conoce-tu-bebida/nuestras-marcas/,
+https://www.beerhouse.mx/new,
 https://siempreencasa.com.ar/
