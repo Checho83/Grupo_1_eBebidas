@@ -1,0 +1,17 @@
+{
+  "name": "sprint2",
+  "version": "1.0.0",
+  "description": "Sprint 2, HTML y CSS",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
