@@ -32,4 +32,4 @@ https://www.beerhouse.mx/new,
 https://siempreencasa.com.ar/
 
 enlace a trello: 
-https://trello.com/b/2FqGmmNe/sprint-2
+https://trello.com/proyectorintegradorgrupo1
