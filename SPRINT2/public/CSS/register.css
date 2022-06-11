@@ -89,11 +89,11 @@ form{
 }
 
 button{
-    font-weight: bolder;
-    font-size: 18px;
-    border: solid 5px rgb(85, 85, 138);
-    padding: 3px;
-    border-radius: 7px;
+    font-weight: bolder;  
+    border: solid 5px #ebebeb;
+   font-size: larger;
+    background-color: #ebebeb;
+
 }
 
 
