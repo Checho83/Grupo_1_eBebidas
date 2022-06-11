@@ -1,20 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        Hola
-    </header>
-    <main>
+<html class="letra">
+    <head>
+        <title>ebebidas</title>
+        <link rel="stylesheet" href="/css/index.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+`       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+    <body>
+        <header>
+            
+            <div class="logo-barra-contenedor">
+                <a href="/" class="logo" ><img src="images/logonuevo.jpg" alt="Logo" title="Logo ebedidas" style="width: 60%;" ></a>
 
-    </main>
-    <footer>
+                <i class="barra-contenedor" >
+                        <input  size="22" type="text" value="Buscar productos"  class="barra">
+                        <i class="fa fa-search"></i>
+                </i>
+            
+                <nav class="menu_header">
+                    <div><a href="/login" style="text-decoration: none;">Creá tu cuenta<i class="fas fa-user separarH"></i></a></div>
+                    <div><a href="/ingreso" style="text-decoration: none;">Ingresá<i class="fas fa-sign-in-alt separarH"></i></a></div>
+                    <div style="padding-top:10px ;font-size:larger"><a href="/compras" style="text-decoration: none;"><i class="fas fa-shopping-cart"></i></a></div>
+                </nav>  
+
+               
+
+            </div>
+                <br>
+                <div class="menu_contenedor">
+                        
+                        <a href="/Home" style="text-decoration: none;"><i class="fas fa-home" class="separarH"></i> Home</a>
+                        <a href="/Productos" style="text-decoration: none;">Productos</a>
+                        <a href="/Quienes_somos"style="text-decoration: none;">Quienes somos</a>
+                        <a href="/Contacto" style="text-decoration: none;">Contacto</a>
+                    
+
+                </div>
+                <i class="fa-regular fa-cart-shopping"></i>
+     
+                <div class="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <br>
+                
+        </header>
+        <main>
+            <div><img  src="images\oferta-inicial.jpg" alt="banner Ofertas" title="banner ebebidas" style="width:100%" ></div>
+            <section>
+                <br>
+                <h2 class="titulos">OFERTAS</h2>
+                <br>
+                    <div class="articulos-contenedor">
+                    <div class = "articulo">
+                        <img class="imagen" src="images/imperial (1).jpg" alt="oferta1" title="oferta1">
+                        <div class="contenido">
+                            <div class="radio"><i class="fas fa-truck camion"></i></div>
+                            <div class="precio">$400</div>
+                            <div class="descuento">10% OFF</div>
+                            <br>
+                            <div class="descripcion"><b>Imperial</b></div>
+                        </div>
+                    </div>
+                    <div class = "articulo">                
+                        <img class="imagen" src="images/imperial-amber.jpg" alt="oferta2" title="oferta2">
+                            <div class="contenido">
+                                <div class="radio"><i class="fas fa-truck camion"></i></div>
+                                <div class="precio">$400</div>
+                                <div class="descuento">10% off</div>
+                                <br>
+                                <div class="descripcion"><b>Imperial Amber</b></div>
+                            </div>
+                    </div>
+                    <div class = "articulo">
+                        <img class="imagen" src="images/wastein.jpg" alt="oferta3" title="oferta3">
+                        <div class="contenido">
+                            <div class="radio"><i class="fas fa-truck camion"></i></div>
+                            <div class="precio">$400</div>
+                            <div class="descuento">10% off</div>
+                            <br>
+                            <div class="descripcion"><b>Wastein</b></div>
+                        </div>
+                    </div>
+                    <div class = "articulo">
+                        <img class="imagen" src="images/miller.jpg" alt="Oferta4" title="Oferta4">
+                        <div class="contenido">
+                            <div class="radio"><i class="fas fa-truck camion"></i></div>
+                            <div class="precio">$400</div>
+                            <div class="descuento">10% off</div>
+                            <br>
+                            <div class="descripcion"><b>Miller</b></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <br>
+                <H2 class="titulos">PRODUCTOS</H2>
+                <br>
+                <div class="articulos-contenedor">
+                    <div class = "articulo">
+                        <a href="/" style=" text-decoration: none;" ><img class="imagen" src="images/vinos.jpg" alt="Vinos" title="Vinos">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Una copa de vino no se le niega a nadie...</b></div></a>
+                        </div>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/" style=" text-decoration: none;"><img class="imagen" src="images/cervezas.jpg" alt="Cervezas" title="Cervezas">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Quién se tomó mi cerveza!!!</b></div></a>
+                        </div>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/" style=" text-decoration: none;"><img class="imagen" src="images/destilados.jpg" alt="Destilados" title="Destilados">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Se vienen los tragos fuertes..</b></div></a>
+                        </div>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/" style=" text-decoration: none;"><img class="imagen" src="images/cocteles.jpg" alt="Cocteleria" title="Cocteleria">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Me voy a lucir con este trago..</b></div></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div><img  src="images\bannerfondo.jpg" alt="banner Ofertas" title="banner ebebidas" style="width:100%" ></div>
+            <br>
+        </main>    
+        <footer>
+            <div class="footer_contenedor">
+                <div><i class="fab fa-facebook iconos_footer"></i><i class="fab fa-instagram-square iconos_footer separarH"></i>
+                <h4><b>Seguinos en redes sociales</b></h4></div>
+                
+            
+                <div ><i class="fas fa-gift iconos_footer"></i>
+                <h4><b>Envío gratis desde $ 2.500</b></h4></div>
+
+                
+                <div ><i class="fas fa-user-shield iconos_footer"></i>
+                <h4><b>Seguridad, de principio a fin</b></h4></div>
+
+                <div><a href="/" style=" text-decoration: none;color: white;"><i class="fab fa-whatsapp iconos_footer"></i>
+                <h4><b>CONTACTOS</b></h4></a></div>
+                
+            </div>
+            <div style="background-color:rgb(71, 134, 92);color: white;text-align: center; font-weight: bold;">Copyright © 1999-2022 ebebidas S.R.L.</div>
+            <br>
         
-    </footer>
-</body>
+        </footer>
+    </body>
 </html>
