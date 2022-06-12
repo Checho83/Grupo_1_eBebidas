@@ -124,7 +124,7 @@ main{
     padding: 5%;
     display: flex;
     text-align: center;
-    background-color:rgb(71, 134, 92);
+    background-color:rgb(29, 29, 29);
     color: white;
     justify-content: space-around;
 }
@@ -197,7 +197,7 @@ i.barra-contenedor{
 }
 .fa{
     background-color: black ;
-    border: solid 2px blue ;
+    border: solid 2px black ;
     color:white;
     border-radius: 5px ;
 }
@@ -219,7 +219,30 @@ a.logo{
     width:100%;
 }
 
+.menu_contenedor a{
+    color: black;
+}
+.menu_contenedor a:hover{
+    color: blue;
+}
+a.ingreso{
+    color: black;
+}
+a.ingreso:hover{
+    color: blue;
+}
+input:focus{
+    border: solid 3px blue;
+    color: white;
+    background-color: black;
+}
 
+.iconos_footer{
+    color: white;
+}
+.iconos_footer:hover{
+    color: blue;
+}
 
 
 
