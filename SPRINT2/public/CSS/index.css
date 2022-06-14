@@ -14,14 +14,26 @@
   text-shadow: #ebebeb;
   font-weight: bold;
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  background-color: rgb(5, 5, 20);
+}
+.menu_contenedor a{
+    color: white;
+}
+.menu_contenedor a:hover{
+    color: blue;
 }
 
 
 .menu_header{
 
     text-align: center;
-    padding-right:2% ;
-    
+    padding-right:2%;
+}
+.menu_header a{
+    color: rgb(5, 5, 20);
+}
+.menu_header a:hover{
+    color: blue;
 }
 
 .separar{
@@ -120,7 +132,10 @@ main{
 .iconos_footer{
     font-size: 2em;
     margin-bottom: 10px;
-    color:blue;
+    color:white;
+}
+.iconos_footer:hover{
+    color: blue;
 }
 
 .camion{
@@ -157,7 +172,7 @@ main{
 }
 
 .footer{
-    background-color:rgb(71, 134, 92);
+    background-color:rgb(5, 5, 20);
     color: white;
     text-align: center;
 }
@@ -167,7 +182,7 @@ main{
     padding: 5%;
     display: flex;
     text-align: center;
-    background-color:rgb(71, 134, 92);
+    background-color:rgb(5, 5, 20);
     color: white;
     justify-content: space-around;
 }

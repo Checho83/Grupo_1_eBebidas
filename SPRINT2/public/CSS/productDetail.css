@@ -14,22 +14,12 @@
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     background-color: rgb(5, 5, 20);
 }
-.logo-barra-contenedor{
-    background-color: rgb(5, 5, 20)
-}
-.div-logo-barra-contendor{
-    /*background-color: rgb(5, 5, 20) !important;*/
-}
 .menu_header{
 
     text-align: center;
     padding-right:2% ;
-    /*background-color: rgb(5, 5, 20) !important;*/
-    
 }
-.barra-contenedor{
-    /*background-color: rgb(5, 5, 20) !important;*/
-}
+
 .separar{
     padding-bottom: 20px ;
 }
@@ -38,25 +28,28 @@
     padding-left: 5px;
 }
 .articulos-contenedor{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    
     text-decoration: none;
+    width: 100%;
 }
 .contenido { 
     position: relative;
-    background-color: white;
     border:solid #ebebeb 1px;
-    padding: 15px;
+    height: 100vh;
+    width: 33%;
     display: flex;
-    flex-wrap: wrap;
-    height: 20%;
+    text-align: center;
+    justify-content: center;
+    margin-top: 50px;
 }
 .titulos{
     font-weight: bolder;
 }
 .articulo {
     margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    height: 10%;
 }
 header {
     background-color: white;
@@ -68,8 +61,8 @@ main{
     margin-bottom: 25px;
 }
 .imagen{
-    width: 100%;
-    height: 80%;
+    width: 33%;
+    height: 200px;
 }
 #barra {
     background-color: white;
@@ -111,8 +104,8 @@ main{
     font-size: 18px;
     font-style:normal;
     font-weight: 900;
-    flex-direction: row;
     width: 30%;
+    
 }
 .descuento{
     
@@ -126,6 +119,9 @@ main{
 .descripcion{
     font-size: 16px;
     font-style:normal;
+}
+div.articulo{
+    justify-content: space-around;
 }
 .footer{
     /*background-color:rgb(71, 134, 92);*/
@@ -242,7 +238,7 @@ a.logo{
     color: blue;
 }
 a.ingreso{
-    color: rgb(216, 216, 216);
+    color: rgb(5, 5, 20);
 }
 a.ingreso:hover{
     color: blue;
@@ -250,9 +246,8 @@ a.ingreso:hover{
 input:focus{
     border: solid 3px blue;
     color: white;
-    background-color: black;
+    background-color: rgb(5, 5, 20);
 }
-
 .iconos_footer{
     color: white;
 }
@@ -260,7 +255,30 @@ input:focus{
     color: blue;
 }
 
-
+#comp{
+    color: rgb(5, 5, 20);
+}
+#comp:hover{
+    color: blue;
+}
+#comp2{
+    color: rgb(5, 5, 20);
+}
+#comp2:hover{
+    color: blue;
+}
+#comp3{
+    color: rgb(5, 5, 20);
+}
+#comp3:hover{
+    color: blue;
+}
+#comp4{
+    color: rgb(5, 5, 20);
+}
+#comp4:hover{
+    color: blue;
+}
 
 
 
@@ -367,13 +385,15 @@ input:focus{
     }
     .articulo {
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
-        width: 22%;
+        width: 100%;
+        display: flex;
+        height: 10%;
     }
     i.barra-contenedor{
         display: block;
     }
     .menu_contenedor{
-
+        width: 100%;
         padding: 1%;
         display: flex;
         justify-content: space-around;
@@ -393,26 +413,27 @@ input:focus{
         padding-right: 5px;
         padding-left: 5px;
     }
-    .articulos-contenedor{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+    .articulos-contenedor{  
+       
+        width: 100%;
         text-decoration: none;
     }
     .contenido { 
         position: relative;
-        background-color: white;
         border:solid #ebebeb 1px;
         padding: 15px;
-        display: flex;
-        flex-wrap: wrap;
         height: 20%;
+        width: 33%;
+        margin-top: 50px;
     }
     .titulos{
         font-weight: bolder;
     }
     .articulo {
         margin-bottom: 10px;
+        width: 100%;
+        display:flex;
+        height: 10%;
     }
     header {
         background-color: ghostwhite;
@@ -423,9 +444,13 @@ input:focus{
         background-color:#ebebeb;
     }
     .imagen{
-        width: 100%;
-        height: 80%;
+        width: 33%;
+        height: 200px;
     }
+    img.imagen{
+        height: 200px;
+    }
+
     #barra {
         background-color: white;
     }
@@ -519,7 +544,9 @@ input:focus{
 @media (min-width:361px) and (max-width:768px) {
     .articulo {
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
-        width: 48%;
+        width: 100%;
+        display: flex;
+        height: 10%;
     }
 
 }
