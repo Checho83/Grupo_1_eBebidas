@@ -1,20 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ebebidas</title>
+    <link rel="stylesheet" href="CSS/productCart.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+`   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
     <header>
+            
+        <div class="logo-barra-contenedor">
+            <a href="/" class="logo" ><img src="images/logonuevo.jpg" alt="Logo" title="Logo ebedidas" style="width: 60%;" id=""></a>
+            <i class="barra-contenedor" >
+                    <input  size="22" type="text" placeholder="Buscar productos"  class="barra">
+                    <i class="fa fa-search"></i>
+            </i>
+            <nav class="menu_header">
+                <div><a href="/register" class="ingreso" style="text-decoration: none;">Creá tu cuenta<i class="fas fa-user separarH"></i></a></div>
+                <div><a href="/ingreso" class="ingreso" style="text-decoration: none;">Ingresá<i class="fas fa-sign-in-alt separarH"></i></a></div>
+                <div class="div-carrito"style="padding-top:10px ;font-size:larger"><a class="ingreso" id="carrito" href="/compras" style="text-decoration: none;"><i class="fas fa-shopping-cart"></i></a></div>
+            </nav>  
+        </div>
+            <br>
+            <div class="menu_contenedor">
+                    
+                    <a href="/Home" style="text-decoration: none;"><i class="fas fa-home" class="separarH"></i> Home</a>
+                    <a href="/Productos" style="text-decoration: none;">Productos</a>
+                    <a href="/Quienes_somos"style="text-decoration: none;">Quienes somos</a>
+                    <a href="/Contacto" style="text-decoration: none;">Contacto</a>
+                
 
+            </div>
+            <i class="fa-regular fa-cart-shopping"></i>
+            <div class="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <br>
+            
     </header>
     <main>
+            <section>
+                    <br>
+                    <h2 class="titulos">Cervezas</h2>
+                    <br>
+                <div class="articulos-contenedor">
+                    <div class = "articulo">
+                            <img class="imagen" src="images/imperial (1).jpg" alt="oferta1" title="oferta1">
+                        <div class="contenido">
+                                <br>
+                                <div class="descripcion"><b>Cerveza Imperial Ipa India Pale Lata 473ml </b></div>
+                        </div>
+                        <div class="contenido">
+                                
+                                <div class="descuento"> <button><i class="fas fa-plus"> </button></i> <input type="number" id="inputcart"> <button><i class="fas fa-minus"></i> </button> </div>
+                        </div>    
+                        <div class="contenido">
+                                <div class="carrito-compra">
+                                    <p>$165</p> 
+                                    <br>
+                                    <p> 10%</p>
+                                </div> 
 
+                        </div>
+                            
+                            
+                    </div>
+                        <div class = "articulo">
+                                <img class="imagen" src="images/wastein.jpg" alt="oferta1" title="oferta1">
+                            <div class="contenido">
+                                    <br>
+                                    <div class="descripcion"><b>Cerveza Warsteiner Rubia Lata 473ml</b></div>
+                            </div>
+                            <div class="contenido">
+                                    <div class="descuento"> <button><i class="fas fa-plus"> </button></i> <input type="number" id="inputcart"> <button><i class="fas fa-minus"></i> </button> </div>
+                            </div>    
+                            <div class="contenido">
+                                    <div class="carrito-compra">
+                                        <p>$120</p>
+                                        <br>
+                                        <p> 10%</p>
+                                    </div>
+                                        <br>
+                                </div>
+                            </div>
+                                
+                        </div>
+                            <div class = "articulo">
+                                    <img class="imagen" src="images/miller.jpg" alt="oferta1" title="oferta1">
+                                <div class="contenido">
+                                        <br>
+                                        <div class="descripcion"><b>Cerveza Miller Genuine Draft Lata 710ml</b></div>
+                                </div>
+                                <div class="contenido">
+                                        
+                                        <div class="descuento"> <button><i class="fas fa-plus"> </button></i> <input type="number" id="inputcart"> <button><i class="fas fa-minus"></i> </button> </div>
+                                </div>    
+                                <div class="contenido">
+                                        <div class="carrito-compra">
+                                            <p> $285 </p> 
+                                            <br>
+                                            <p> 10% </p>
+                                            
+                                    </div>
+                                </div>
+                                    
+                                    
+                            </div>
+                                <div class = "articulo">
+                                        <img class="imagen" src="images/imperial-amber.jpg" alt="oferta1" title="oferta1">
+                                    <div class="contenido">
+                                            <br>
+                                            <div class="descripcion"><b>Cerveza Imperial Amber Lager Lata 473ml</b></div>
+                                    </div>
+                                    <div class="contenido">
+                                            
+                                            <div class="descuento"> <button><i class="fas fa-plus"> </button></i> <input type="number" id="inputcart"> <button><i class="fas fa-minus"></i> </button> </div>
+                                    </div>    
+                                    <div class="contenido">
+                                            <div class="carrito-compra">
+                                                <p> $200 </p> 
+                                                <br>
+                                                <p> 10% </p>
+                                        </div>
+                                    </div>
+                                        
+                                        
+                                </div>
+                </div>
+                </section>
     </main>
     <footer>
+        <footer>
+            <div class="footer_contenedor">
+                <div><a href="/" style=" text-decoration: none;color: white;">
+                    <i class="fab fa-facebook iconos_footer"></i></a>
+
+                    <a href="/" style=" text-decoration: none;color: white;">
+                    <i class="fab fa-instagram-square iconos_footer separarH"></i></a>
+                <h4><b>Seguinos en redes sociales</b></h4></div>
+                
+            
+                <div ><i class="fas fa-gift iconos_footer"></i>
+                <h4><b>Envío gratis desde $ 2.500</b></h4></div>
+
+                
+                <div ><i class="fas fa-user-shield iconos_footer"></i>
+                <h4><b>Seguridad, de principio a fin</b></h4></div>
+
+                <div><a href="/" style=" text-decoration: none;color: white;"><i class="fab fa-whatsapp iconos_footer"></i>
+                <h4><b>CONTACTOS</b></h4></a></div>
+                
+            </div>
+            <div style="background-color: rgb(6, 6, 26) ;color: white;text-align: center; font-weight: bold;">Copyright © 1999-2022 ebebidas S.R.L.</div>
+            <br>
         
+        </footer>
     </footer>
 </body>
 </html>
