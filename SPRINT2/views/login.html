@@ -1,20 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html class="letra">
+    <head>
+        <title>ebebidas</title>
+        <link rel="stylesheet" href="/css/login.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+`       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
 <body>
     <header>
+            
+        <div class="logo-barra-contenedor">
+            <a href="/" class="logo" ><img src="images/logonuevo.jpg" alt="Logo" title="Logo ebedidas" style="width: 60%;" ></a>
 
+            <i class="barra-contenedor" >
+                    <input  size="22" type="text" placeholder="Buscar productos"  class="barra">
+                    <i class="fa fa-search"></i>
+            </i>
+        
+            <nav class="menu_header">
+                <div><a href="/register" style="text-decoration: none;">Creá tu cuenta<i class="fas fa-user separarH"></i></a></div>
+                <div><a href="/login" style="text-decoration: none;">Ingresá<i class="fas fa-sign-in-alt separarH"></i></a></div>
+                <div style="padding-top:10px ;font-size:larger"><a href="/productCart" style="text-decoration: none;"><i class="fas fa-shopping-cart"></i></a></div>
+            </nav> 
+
+
+        </div>
+            <br>
+            <div class="menu_contenedor">
+                    
+                    <a href="/Home" ><i class="fas fa-home" class="separarH"></i> Home</a>
+                    <a href="/productDetail">Productos</a>
+                    <a href="/Quienes_somos">Quienes somos</a>
+                    <a href="/Contacto">Contacto</a>
+
+            </div>
+            <i class="fa-regular fa-cart-shopping"></i>
+ 
+            <div class="burger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <br>
+            
     </header>
     <main>
+        <br>
+        <form action="/home" method="get" style="line-height : 30px; font-size:18px ;">
 
-    </main>
+             
+             <div></div><label for="nombreusuario">Nombre de usuario</label></div>
+             <div></div><input class="ancho_form" type="text" name="nombreusuario" id="nombreusuario" required size="35"></div>
+      
+
+             <div><label for="pass">Ingresar contraseña:</label></div>
+             <div><input class="ancho_form" type="password" name="pass" id="pass" size="35" minlength="3" maxlength="8"></div>
+
+            <br>
+
+           <div><button type="submit"> <img class="logo" src="images/ingresar.jpg" alt="Logo_registro" title="Logo_registro" > </button></div> 
+
+           <br>            
+           
+         <a href="/register" class="registrate">si no estas registrado, hacelo aquí!</a>        
+           
+         </form>
+         <br>
+    </main>    
     <footer>
+        <div class="footer_contenedor">
+            <div>
+                <a href=""><i class="fab fa-facebook iconos_footer"></i></a>
+                <a href=""><i class="fab fa-instagram-square iconos_footer separarH"></i></a>
+                <h4><b>Seguinos en redes sociales</b></h4>
+            </div>
+            
         
+            <div ><i class="fas fa-gift iconos_footer"></i>
+            <h4><b>Envío gratis desde $ 2.500</b></h4></div>
+
+            
+            <div ><i class="fas fa-user-shield iconos_footer"></i>
+            <h4><b>Seguridad, de principio a fin</b></h4></div>
+
+            <div><a href="/" style=" text-decoration: none;color: white;"><i class="fab fa-whatsapp iconos_footer"></i>
+            <h4><b>CONTACTOS</b></h4></a></div>
+            
+        </div>
+        <div style="background-color:rgb(5, 5, 20);color: white;text-align: center; font-weight: bold;">Copyright © 1999-2022 ebebidas S.R.L.</div>
+        <br>
     </footer>
 </body>
 </html>

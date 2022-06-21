@@ -1,163 +1,194 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>ebebidas</title>
-    <link rel="stylesheet" href="CSS/productCart.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-`   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-</head>
-<body>
-    <header>
+<html class="letra">
+    <head>
+        <title>ebebidas</title>
+        <link rel="stylesheet" href="/css/productCart.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+`       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <script type="text/javascript" >
+            function doFunction(){
+                var cant1 = document.getElementById("cantidad1").value;        
+                var valor_total_1 =cant1*124;
+                document.getElementById('cantidad_comprar_1').innerHTML = cant1;
+                document.getElementById('valor_total_1').innerHTML = valor_total_1;
+
+                var cant2 = document.getElementById("cantidad2").value;        
+                var valor_total_2 =cant2*450;
+                document.getElementById('cantidad_comprar_2').innerHTML = cant2;
+                document.getElementById('valor_total_2').innerHTML = valor_total_2;
+            }
+		</script>
+    </head>
+    <body>
+        <header>
             
-        <div class="logo-barra-contenedor">
-            <a href="/" class="logo" ><img src="images/logonuevo.jpg" alt="Logo" title="Logo ebedidas" style="width: 60%;" id=""></a>
-            <i class="barra-contenedor" >
-                    <input  size="22" type="text" placeholder="Buscar productos"  class="barra">
-                    <i class="fa fa-search"></i>
-            </i>
-            <nav class="menu_header">
-                <div><a href="/register" class="ingreso" style="text-decoration: none;">Creá tu cuenta<i class="fas fa-user separarH"></i></a></div>
-                <div><a href="/login" class="ingreso" style="text-decoration: none;">Ingresá<i class="fas fa-sign-in-alt separarH"></i></a></div>
-                <div class="div-carrito"style="padding-top:10px ;font-size:larger"><a class="ingreso" id="carrito" href="productCart" style="text-decoration: none;"><i class="fas fa-shopping-cart"></i></a></div>
-            </nav>  
-        </div>
-            <br>
-            <div class="menu_contenedor">
-                    
-                    <a href="/home" style="text-decoration: none;"><i class="fas fa-home" class="separarH"></i> Home</a>
-                    <a href="/productDetail" style="text-decoration: none;">Productos</a>
-                    <a href="/Quienes_somos"style="text-decoration: none;">Quienes somos</a>
-                    <a href="/Contacto" style="text-decoration: none;">Contacto</a>
-                
+            <div class="logo-barra-contenedor">
+                <a href="/" class="logo" ><img src="images/logonuevo.jpg" alt="Logo" title="Logo ebedidas" style="width: 60%;" ></a>
+
+                <i class="barra-contenedor" >
+                        <input  size="22" type="text" placeholder="Buscar productos"  class="barra">
+                        <i class="fa fa-search"></i>
+                </i>
+            
+                <nav class="menu_header">
+                    <div><a href="/register" style="text-decoration: none;">Creá tu cuenta<i class="fas fa-user separarH"></i></a></div>
+                    <div><a href="/login" style="text-decoration: none;">Ingresá<i class="fas fa-sign-in-alt separarH"></i></a></div>
+                    <div style="padding-top:10px ;font-size:larger"><a href="/productCart" style="text-decoration: none;"><i class="fas fa-shopping-cart"></i></a></div>
+                </nav> 
+
+               
 
             </div>
-            <i class="fa-regular fa-cart-shopping"></i>
-            <div class="burger-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-            <br>
-            
-    </header>
-    <main>
-            <section>
-                    <br>
-                    <h2 class="titulos">Cervezas</h2>
-                    <br>
-                <div class="articulos-contenedor">
-                    <div class = "articulo">
-                            <img class="imagen" src="images/imperial (1).jpg" alt="oferta1" title="oferta1">
-                        <div class="contenido">
-                                <br>
-                                <div class="descripcion"><b>Cerveza Imperial Ipa India Pale Lata 473ml </b></div>
-                        </div>
-                        <div class="contenido">
-                                
-                                <div class="descuento"> <button><i class="fas fa-plus"> </button></i> <input type="number" id="inputcart"> <button><i class="fas fa-minus"></i> </button> </div>
-                        </div>    
-                        <div class="contenido">
-                                <div class="carrito-compra">
-                                    <p>$165</p> 
-                                    <br>
-                                    <p> 10%</p>
-                                </div> 
+                <br>
+                <div class="menu_contenedor">
+                        
+                        <a href="/Home" ><i class="fas fa-home" class="separarH"></i> Home</a>
+                        <a href="/productDetail">Productos</a>
+                        <a href="/Quienes_somos">Quienes somos</a>
+                        <a href="/Contacto">Contacto</a>
 
-                        </div>
-                            
-                            
-                    </div>
-                        <div class = "articulo">
-                                <img class="imagen" src="images/wastein.jpg" alt="oferta1" title="oferta1">
-                            <div class="contenido">
-                                    <br>
-                                    <div class="descripcion"><b>Cerveza Warsteiner Rubia Lata 473ml</b></div>
-                            </div>
-                            <div class="contenido">
-                                    <div class="descuento"> <button><i class="fas fa-plus"> </button></i> <input type="number" id="inputcart"> <button><i class="fas fa-minus"></i> </button> </div>
-                            </div>    
-                            <div class="contenido">
-                                    <div class="carrito-compra">
-                                        <p>$120</p>
-                                        <br>
-                                        <p> 10%</p>
-                                    </div>
-                                        <br>
-                                </div>
-                            </div>
-                                
-                        </div>
-                            <div class = "articulo">
-                                    <img class="imagen" src="images/miller.jpg" alt="oferta1" title="oferta1">
-                                <div class="contenido">
-                                        <br>
-                                        <div class="descripcion"><b>Cerveza Miller Genuine Draft Lata 710ml</b></div>
-                                </div>
-                                <div class="contenido">
-                                        
-                                        <div class="descuento"> <button><i class="fas fa-plus"> </button></i> <input type="number" id="inputcart"> <button><i class="fas fa-minus"></i> </button> </div>
-                                </div>    
-                                <div class="contenido">
-                                        <div class="carrito-compra">
-                                            <p> $285 </p> 
-                                            <br>
-                                            <p> 10% </p>
-                                            
-                                    </div>
-                                </div>
-                                    
-                                    
-                            </div>
-                                <div class = "articulo">
-                                        <img class="imagen" src="images/imperial-amber.jpg" alt="oferta1" title="oferta1">
-                                    <div class="contenido">
-                                            <br>
-                                            <div class="descripcion"><b>Cerveza Imperial Amber Lager Lata 473ml</b></div>
-                                    </div>
-                                    <div class="contenido">
-                                            
-                                            <div class="descuento"> <button><i class="fas fa-plus"> </button></i> <input type="number" id="inputcart"> <button><i class="fas fa-minus"></i> </button> </div>
-                                    </div>    
-                                    <div class="contenido">
-                                            <div class="carrito-compra">
-                                                <p> $200 </p> 
-                                                <br>
-                                                <p> 10% </p>
-                                        </div>
-                                    </div>
-                                        
-                                        
-                                </div>
                 </div>
-                </section>
-    </main>
-    <footer>
+                <i class="fa-regular fa-cart-shopping"></i>
+     
+                <div class="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <br>
+                
+        </header>
+        <main>
+            <br>
+            <h3>ARTICULOS CARRITO DE COMPRAS:</h3>
+            <br>
+            <div >
+            <article class="articulos-carrito">
+            
+                <div style="width: 20%">
+                    <img class="imagenOfertas" src="images/wastein.jpg" alt="oferta1" title="oferta1" style="height: fit-content; width: 25%;">
+                </div>
+                <div style="width:20%">
+                    <div>
+                        <h3>Warsteiner gold</h3>
+                    </div>
+                </div>
+               
+                <div>
+                    <p style="font-weight:bolder ;">CERVEZA(S)</p>
+
+                   <form action="/home" method="get">
+                        <label class="separarH2">Cantidad</label>
+                        <select id="cantidad1" name="cantidad" onchange="doFunction();">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                       
+                   </form>
+                        
+                </div> 
+                <div style="width: 10%;font-weight:bolder ;">
+                    <div><label id="cantidad_comprar_1">1</label>x</div>
+                    <div>Desc:</div>
+                    <div>Total:</div>
+                </div>
+                <div style="width: 10%;">
+                    <div>125</div>
+                    <div>0</div>
+                    <div><label id="valor_total_1">125</label></div>
+                    
+                </div>
+                <div style="width: 10%;">
+                    <button type="submit" style="padding: 2%">X</button>
+
+                </div>           
+            </article>
+            <article class="articulos-carrito">
+            
+                <div style="width: 20%">
+                    <img class="imagenOfertas" src="images/articulo1.jpg" alt="oferta1" title="oferta1" style="height: fit-content; width: 25%;">
+                </div>
+                <div style="width:20%">
+                    <div>
+                        <h3>Brouwerij IPA</h3>
+                    </div>
+                </div>
+               
+                <div>
+                    <p style="font-weight:bolder ;">CERVEZA(S)</p>
+
+                   <form action="/home" method="get">
+                        <label class="separarH2">Cantidad</label>
+                        <select id="cantidad2" name="cantidad" onchange="doFunction();">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                       
+                   </form>
+                        
+                </div> 
+                <div style="width: 10%;font-weight:bolder ;">
+                    <div><label id="cantidad_comprar_2">1</label>x</div>
+                    <div>Desc:</div>
+                    <div>Total:</div>
+                </div>
+                <div style="width: 10%;">
+                    <div>450</div>
+                    <div>0</div>
+                    <div><label id="valor_total_2">450</label></div>
+                    
+                </div>
+                <div style="width: 10%;">
+                    <button type="submit" style="padding: 2%">X</button>
+                </div>           
+            </article>
+            </div>
+            <div style="text-align:center;margin-top: 5%; "><button type="submit" style="border-radius: 5px;border: 2px black solid;padding: 1%;background-color: whitesmoke;color:blue;"><i style="font-size:3em;" class="fas fa-shopping-cart"></i></button></div> 
+        <br>
+        </main>
         <footer>
             <div class="footer_contenedor">
-                <div><a href="/" style=" text-decoration: none;color: white;">
-                    <i class="fab fa-facebook iconos_footer"></i></a>
-
-                    <a href="/" style=" text-decoration: none;color: white;">
-                    <i class="fab fa-instagram-square iconos_footer separarH"></i></a>
-                <h4><b>Seguinos en redes sociales</b></h4></div>
+                <div>
+                    <a href=""><i class="fab fa-facebook iconos_footer"></i></a>
+                    <a href=""><i class="fab fa-instagram-square iconos_footer separarH"></i></a>
+                    <h4><b>Seguinos en redes sociales</b></h4>
+                </div>
                 
             
                 <div ><i class="fas fa-gift iconos_footer"></i>
                 <h4><b>Envío gratis desde $ 2.500</b></h4></div>
-
+    
                 
                 <div ><i class="fas fa-user-shield iconos_footer"></i>
                 <h4><b>Seguridad, de principio a fin</b></h4></div>
-
+    
                 <div><a href="/" style=" text-decoration: none;color: white;"><i class="fab fa-whatsapp iconos_footer"></i>
                 <h4><b>CONTACTOS</b></h4></a></div>
                 
             </div>
-            <div style="background-color: rgb(6, 6, 26) ;color: white;text-align: center; font-weight: bold;">Copyright © 1999-2022 ebebidas S.R.L.</div>
+            <div style="background-color:rgb(5, 5, 20);color: white;text-align: center; font-weight: bold;">Copyright © 1999-2022 ebebidas S.R.L.</div>
             <br>
         
         </footer>
-    </footer>
+    </body>
+    </html>
 </body>
 </html>

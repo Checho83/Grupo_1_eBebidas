@@ -6,34 +6,37 @@
 
 
 .menu_contenedor{
-
     padding: 1%;
     display: flex;
-  justify-content: space-around;
-  text-align: left;
-  text-shadow: #ebebeb;
-  font-weight: bold;
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
-  background-color: rgb(5, 5, 20);
+    justify-content: space-around;
+    text-align: left;
+    text-shadow: #ebebeb;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    background-color: rgb(5, 5, 20);
+    color:white;
 }
+
 .menu_contenedor a{
-    color: white;
+    color:white;
+    text-decoration: none;
 }
 .menu_contenedor a:hover{
-    color: blue;
+    color: darkgray;
 }
 
-
 .menu_header{
-
     text-align: center;
-    padding-right:2%;
+    padding-right:2% ;
 }
 .menu_header a{
     color: rgb(5, 5, 20);
 }
 .menu_header a:hover{
-    color: blue;
+    color: darkgray;
+}
+.descripcion b{
+    color:rgb(5, 5, 20);
 }
 
 .separar{
@@ -74,13 +77,13 @@
 .articulo {
 
     margin-bottom: 10px;
+    background-color: white;
   /*  text-align: center;*/
 }
 
 header {
     background-color: ghostwhite;
-/*    padding-left: 5%;
-    padding-right: 5%;*/
+
 }
 
 main{
@@ -88,9 +91,13 @@ main{
     padding-right: 5%;
     background-color:#ebebeb;
 }
-
-
-
+/*-----------------------agregado-----------------*/
+.imagenOfertas{
+    width: 50%;
+    height: 70%;
+    display: block;
+} 
+/*-----------------------agregado-----------------*/
 .imagen{
    width: 100%;
    height: 80%;
@@ -132,10 +139,10 @@ main{
 .iconos_footer{
     font-size: 2em;
     margin-bottom: 10px;
-    color:white;
+    color:rgb(255, 255, 255);
 }
 .iconos_footer:hover{
-    color: blue;
+    color:darkgray;
 }
 
 .camion{
@@ -209,10 +216,8 @@ main{
     justify-content: space-between;
     flex-direction: row ;
     text-align: center;
-
-    border: solid 5px rgb(85, 85, 138);
+    border: solid 5px rgb(5, 5, 20);
     border-radius: 5px;
-
     font-style:normal;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
@@ -250,6 +255,9 @@ main{
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
         width: 22%;
     }
+    .articulo:hover{
+        box-shadow: 15px 15px 10px rgb(0, 0, 0);
+    }
 
 
 }    
@@ -266,7 +274,7 @@ main{
 
 .logo, .barra-contenedor, .menu_header{
      width:32%;
-     font-size: 1.5rem;
+     font-size: 1rem;
 }
 
 .fa{
