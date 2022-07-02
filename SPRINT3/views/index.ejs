@@ -1,0 +1,98 @@
+<html class="letra">
+    <%- include ('./partials/head', {hojaDeEstilo: 'index.css', titulo:'home'}) %> 
+    <body>
+        
+        <%- include ('./partials/header', {hojaDeEstilo: 'index.css', titulo:'Home'}) %>  
+
+        <main>
+
+            <div><img  src="images\oferta-inicial.jpg" alt="banner Ofertas" title="banner ebebidas" style="width:100%" ></div>
+            <section>
+                <br>
+                <h2 class="titulos">OFERTAS</h2>
+                <br>
+                    <div class="articulos-contenedor">
+                    <div class = "articulo">
+                        <img class="imagenOfertas" src="images/imperial (1).jpg" alt="oferta1" title="oferta1">
+                        <div class="contenido">
+                            <div class="radio"><i class="fas fa-truck camion"></i></div>
+                            <div class="precio">$400</div>
+                            <div class="descuento">10% OFF</div>
+                            <br>
+                            <div class="descripcion"><b>Imperial</b></div>
+                        </div>
+                    </div>
+                    <div class = "articulo">                
+                        <img class="imagenOfertas" src="images/imperial-amber.jpg" alt="oferta2" title="oferta2">
+                            <div class="contenido">
+                                <div class="radio"><i class="fas fa-truck camion"></i></div>
+                                <div class="precio">$400</div>
+                                <div class="descuento">10% off</div>
+                                <br>
+                                <div class="descripcion"><b>Imperial Amber</b></div>
+                            </div>
+                    </div>
+                    <div class = "articulo">
+                        <img class="imagenOfertas" src="images/wastein.jpg" alt="oferta3" title="oferta3">
+                        <div class="contenido">
+                            <div class="radio"><i class="fas fa-truck camion"></i></div>
+                            <div class="precio">$400</div>
+                            <div class="descuento">10% off</div>
+                            <br>
+                            <div class="descripcion"><b>Wastein</b></div>
+                        </div>
+                    </div>
+                    <div class = "articulo">
+                        <img class="imagenOfertas" src="images/miller.jpg" alt="Oferta4" title="Oferta4">
+                        <div class="contenido">
+                            <div class="radio"><i class="fas fa-truck camion"></i></div>
+                            <div class="precio">$400</div>
+                            <div class="descuento">10% off</div>
+                            <br>
+                            <div class="descripcion"><b>Miller</b></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <br>
+                <H2 class="titulos">PRODUCTOS</H2>
+                <br>
+                <div class="articulos-contenedor">
+                    <div class = "articulo">
+                        <a href="/productos/productDetail" style=" text-decoration: none;" ><img class="imagen" src="images/vinos.jpg" alt="Vinos" title="Vinos">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Una copa de vino no se le niega a nadie...</b></div></a>
+                        </div>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/productos/productDetail" style=" text-decoration: none;"><img class="imagen" src="images/cervezas.jpg" alt="Cervezas" title="Cervezas">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Quién se tomó mi cerveza!!!</b></div></a>
+                        </div>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/productos/productDetail" style=" text-decoration: none;"><img class="imagen" src="images/destilados.jpg" alt="Destilados" title="Destilados">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Se vienen los tragos fuertes..</b></div></a>
+                        </div>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/productos/productDetail" style=" text-decoration: none;"><img class="imagen" src="images/cocteles.jpg" alt="Cocteleria" title="Cocteleria">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Me voy a lucir con este trago..</b></div></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div><img  src="images\bannerfondo.jpg" alt="banner Ofertas" title="banner ebebidas" style="width:100%" ></div>
+            <br>
+        </main>    
+        
+        <%- include ('./partials/footer', {hojaDeEstilo: 'index.css', titulo:'Home'}) %>  
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<html class="letra">
+    <%- include ('../partials/head', {hojaDeEstilo: 'register.css', titulo:'registro'}) %>   
+
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'register.css', titulo:'registro'}) %>  
+        
+        <main>
+            <form action="/home" method="get" style="line-height : 30px; font-size:18px ;">
+
+                 <div></div><label for="nombre" >Nombre y apellido</label></div>
+                 <div></div><input class="ancho_form" type="text" name="nombre" id="nombre" required size="40" ></div>
+
+                 <div></div><label for="nombreusuario">Nombre de usuario</label></div>
+                 <div></div><input class="ancho_form" type="text" name="nombreusuario" id="nombreusuario" required size="40"></div>
+
+                 <div></div><label for="mail">Ingresar @mail</label></div>
+                 <div></div><input class="ancho_form" type="email" name="mail" id="mail" required size="40"></div>
+
+                 <div></div><label for="fechanacimiento">Fecha de Nacimiento</label></div>
+                 <div></div><input class="ancho_form" type="date" name="fechanacimiento" required size="40"></div>
+
+                 
+              
+                  <div><label for="domicilio">Ingresar el Domicilio</label></div>
+                  <div><input class="ancho_form" type="text" name="domicilio" id="domicilio" required size="40"</div>
+
+ 
+                <div><label for="mayoria_edad">Sos mayor de 18? </label>
+                <label for="mayoria_edad">SI </label><input type="radio" value="SI" name="mayoria_edad" id="mayoria_edad" required>
+                 
+                <label for="mayoria_edad">NO </label><input type="radio" value="NO" name="mayoria_edad" id="mayoria_edad" required></div>
+                 
+
+                 <div><label for="pass">Ingresar contraseña:</label></div>
+                 <div><input class="ancho_form" type="password" name="pass" id="pass" size="40" minlength="3" maxlength="8"></div>
+
+
+                 <div><label for="pass">Confirmar contraseña:</label></div>
+                 <div><input class="ancho_form" type="password" name="pass" id="pass" size="40" minlength="3" maxlength="8"></div>
+                <br>
+               <div><button type="submit"> <img class="logo" src="../images/registro.jpg" alt="Logo_registro" title="Logo_registro" > </button></div> 
+               <br>            
+               <div><button type="reset"> RESET </button></div>
+               <br>
+ 
+             </form>
+            
+        </main>    
+        
+        <%- include ('../partials/footer', {hojaDeEstilo: 'register.css', titulo:'registro'}) %>  
+    </body>
+</html>

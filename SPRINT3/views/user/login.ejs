@@ -1,0 +1,33 @@
+<html class="letra">
+    <%- include ('../partials/head', {hojaDeEstilo: 'login.css', titulo:'Ingresá'}) %>      
+
+<body>
+    <%- include ('../partials/header', {hojaDeEstilo: 'login.css', titulo:'Ingresá'}) %>   
+    
+    <main>
+        <br>
+        <form action="/home" method="get" style="line-height : 30px; font-size:18px ;">
+
+             
+             <div></div><label for="nombreusuario">Nombre de usuario</label></div>
+             <div></div><input class="ancho_form" type="text" name="nombreusuario" id="nombreusuario" required size="35"></div>
+      
+
+             <div><label for="pass">Ingresar contraseña:</label></div>
+             <div><input class="ancho_form" type="password" name="pass" id="pass" size="35" minlength="3" maxlength="8"></div>
+
+            <br>
+
+           <div><button type="submit"> <img class="logo" src="../images/ingresar.jpg" alt="Logo_registro" title="Logo_registro" > </button></div> 
+
+           <br>            
+           
+         <a href="/register" class="registrate">si no estas registrado, hacelo aquí!</a>        
+           
+         </form>
+         <br>
+    </main>    
+    
+    <%- include ('../partials/footer', {hojaDeEstilo: 'login.css', titulo:'Ingresá'}) %>  
+</body>
+</html>
