@@ -81,26 +81,32 @@ header {
 }
 
 main{
+    padding-top: 2%;
+    padding-bottom: 2%;
     padding-left: 5%;
     padding-right: 5%;
-    background-color:#ebebeb;
+    /* background-color:#ebebeb; */
     text-align: center;
     font-weight: bold ;
+    background:url(../images/fondo.jpg);
+    background-size: 50%;
+    opacity: 0.8;
 }
 
 form{
-
-    margin-right: 25%;
-    margin-left: 25%;
-    width: 50%;
+    padding-top: 1%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 30%;
     border: solid 5px rgb(5, 5, 20);
     border-radius: 5px;
-    
+    background-color: #ebebeb;;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+
 }
 
 .ancho_form{
-    width: 90%;
+    width: 50%;
 }
 
 button{
@@ -205,7 +211,9 @@ button{
         width: 48%;
     }
 
-    
+    form{
+        width:50%
+    }
 
 }
 
@@ -254,8 +262,6 @@ button{
     .logo, .barra-contenedor {
         width:48%;
         padding-bottom: 2%;
-    /*    padding-left: 5%;
-        padding-right: 5%;*/
     }
 
     .barra{
@@ -273,5 +279,9 @@ button{
     }
     .descripcion{
         display: none;
+    }
+
+    form{
+        width:50%
     }
 }

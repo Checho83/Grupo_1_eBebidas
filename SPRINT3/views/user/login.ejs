@@ -5,7 +5,7 @@
     <%- include ('../partials/header', {hojaDeEstilo: 'login.css', titulo:'Ingresá'}) %>   
     
     <main>
-        <br>
+
         <form action="/home" method="get" style="line-height : 30px; font-size:18px ;">
 
              
@@ -14,7 +14,7 @@
       
 
              <div><label for="pass">Ingresar contraseña:</label></div>
-             <div><input class="ancho_form" type="password" name="pass" id="pass" size="35" minlength="3" maxlength="8"></div>
+             <div><input class="ancho_form" type="password" name="pass" id="pass" size="35" minlength="3" maxlength="8" required></div>
 
             <br>
 
@@ -22,10 +22,10 @@
 
            <br>            
            
-         <a href="/register" class="registrate">si no estas registrado, hacelo aquí!</a>        
+         <a href="/user/register" class="registrate">ERES NUEVO?, PULSA AQUí!</a>        
            
          </form>
-         <br>
+
     </main>    
     
     <%- include ('../partials/footer', {hojaDeEstilo: 'login.css', titulo:'Ingresá'}) %>  

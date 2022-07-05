@@ -33,3 +33,14 @@ https://siempreencasa.com.ar/
 
 enlace a trello: 
 https://trello.com/proyectorintegradorgrupo1
+
+
+
+Notas Versión SPRINT3:
+ - Estructurado en modo MVC, implementación EJS
+ - Agregado de partials (head, header, footer)
+ - Página agregada (/productos/productEdit)
+ - Acceso a página de edición de productos:
+    usuario:ADMIN
+    constraseña:ADMIN
+ - Cambio de fondos

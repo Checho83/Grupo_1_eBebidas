@@ -2,13 +2,14 @@ const path = require("path");
 const express = require("express");
 const app= express();
 const puerto = 3030;
+
 app.set('view engine','ejs');
 app.use(express.static('public'));
 
 const mainRouter = require('./routers/mainRouter');
 const userRouter = require('./routers/userRouter');
 const productRouter = require('./routers/productRouter');
-//const productCart = require('./routers/productCart');
+
 
 app.use("/", mainRouter);
 app.use("/user", userRouter);

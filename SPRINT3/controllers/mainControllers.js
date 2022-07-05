@@ -1,8 +1,10 @@
 
 const path = require('path');
 
+/* function validacion(){
 
-
+}
+ */
 
 const mainController = {
     index: (req,res)=>{
@@ -13,9 +15,13 @@ const mainController = {
     },
     carrito:(req,res)=>{
         res.render('productCart');
-    }/* ,
-    nombreusuario=ADMIN&pass=ADMIN:(req,res)=>{
-        res.render('productEdit');
-    }, */
+    },
+    nombreusuario:(req,res)=>{
+      if ((req.query.nombreusuario == 'ADMIN')&&(req.query.pass == 'ADMIN'))
+        res.render('productos/productEdit');
+      else
+       res.render('index');
+    }
 } 
+
 module.exports = mainController;

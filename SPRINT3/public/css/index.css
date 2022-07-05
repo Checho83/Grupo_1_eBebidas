@@ -89,7 +89,8 @@ header {
 main{
     padding-left: 5%;
     padding-right: 5%;
-    background-color:#ebebeb;
+    background-color:#3e415242;
+    height: fit-content;
 }
 /*-----------------------agregado-----------------*/
 .imagenOfertas{
