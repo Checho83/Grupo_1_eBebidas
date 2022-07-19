@@ -1,0 +1,47 @@
+<html class="letra">
+    <%- include ('../partials/head', {hojaDeEstilo: 'productDetail.css', titulo:'Detalle'}) %>     
+
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'productDetail.css', titulo:'Detalle'}) %>  
+       
+        <main>
+            <br>
+            <% for(let item of productos) {%> 
+            <article class="articulos-carrito">
+                <div style="width: 25%;text-align: center;">
+                  <img class="imagenOfertas" src="../images/<%= item.image %> " alt="oferta1" title="oferta1" style="height: fit-content; width: 80%;"> 
+                </div>
+            <div  class="descripcionCarrito">        
+                    <h4><%= item.name %></h4>
+                    <p><%= item.description%></p>
+            </div>
+            </div>
+            <div style="width:35%;text-align: center;padding: 2%;">
+                <div style="font-weight:bold;">Precio: $<%= item.price %></div>
+            <form action="/" method="get">
+                    <label >Cantidad</label>
+                    <select name="cantidad">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select> 
+                <div><button type="submit" style="margin-top:2%">Añadir al carrito</button></div>
+            </form>             
+            </div>        
+        </article>
+        <% } %> 
+        <br>
+        </main>
+        
+        <%- include ('../partials/footer', {hojaDeEstilo: 'productDetailcss', titulo:'Detalle'}) %>  
+    </body>
+    </html>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html class="letra">
+<%- include ('../partials/head', {hojaDeEstilo: 'productEdit.css' , titulo:'edicion'}) %>
+
+<body>
+    <%- include ('../partials/header', {hojaDeEstilo: 'productEdit.css', titulo:'edicion'}) %>  
+    <main>
+        <h1 style="color: white">
+            Página con acceso restringido : Solo administradores del sitio
+        </h1>
+        <br>
+       
+        <div class="crearEditar">
+                <h1>
+                    Seleccione la opcion deseada: 
+                </h1>
+                <br>
+                <br>
+             <br>
+        </div>
+        <div>
+                <div class="opciones">
+                    <a href="/productos/productList" style="text-decoration: none;">Listado de productos/ Editar /Borrar</a>
+                </div>
+                <br>
+                <br>
+                <div class="opciones">
+                    <a href="/productos/productCreate" style="text-decoration: none;">Crear Producto</a>
+                </div> 
+                <br>   
+        </div>
+            
+                     
+        
+      
+    </main>
+      
+            <%- include ('../partials/footer', {hojaDeEstilo: 'register.css' , titulo:'registro'}) %>
+    </body>
+
+</html>

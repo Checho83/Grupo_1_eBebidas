@@ -1,0 +1,45 @@
+<html class="letra">
+    <%- include ('../partials/head', {hojaDeEstilo: 'productDetail.css', titulo:'Detalle'}) %>     
+
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'productDetail.css', titulo:'Detalle'}) %>  
+      
+        <main>
+            <br>
+            <% for(let index = 0; index < productos.length;index++) {%> 
+            <article class="articulos-carrito">
+                <div style="width: 25%;text-align: center;">
+                  <img class="imagenOfertas" src="../images/<%= productos[index].image %> " alt="oferta1" title="oferta1" style="height: fit-content; width: 50%;"> 
+                </div>
+            <div  class="descripcionLista"> 
+                    <h4>ID producto: <%= productos[index].id %> </h4> 
+                    <h4>Categoría <%= productos[index].category %> </h4> 
+                    <h4>Nombre Producto: <%= productos[index].name %></h4>
+                    <h4>Precio:$  <%= productos[index].price %></h4>
+                    <h4>Descuento:  <%= productos[index].discount%>%</h4>               
+                    <h4>En Oferta:  <%=productos[index].offer%></h4>
+                    <h4>Stock Producto:  <%= productos[index].stock%> unidades</h4>
+                    <h4>Descripción: <%= productos[index].description%></h4>
+            </div>
+       
+           
+            <form action="<%= index %>" method="get">
+                                     
+                <div><button type="submit" style="margin-right:10px; font-size: 2rem;">Editar</button></div>
+                <br>
+            </form> 
+            <form action="<%= index %>?_method=DELETE" method="POST">
+                <div><button type="delete" style="margin-right:10px; font-size: 2rem;">Borrar</button></div>
+            <br>
+            </form>
+            </div>        
+        </article>
+        <% } %> 
+        <br>
+        </main>
+        
+        <%- include ('../partials/footer', {hojaDeEstilo: 'productDetailcss', titulo:'Detalle'}) %>  
+    </body>
+    </html>
+</body>
+</html>
