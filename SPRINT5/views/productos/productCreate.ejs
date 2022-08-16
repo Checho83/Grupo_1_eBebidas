@@ -1,0 +1,57 @@
+<html class="letra">
+<%- include ('../partials/head', {hojaDeEstilo: 'productEdit.css' , titulo:'registro'}) %>
+
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'productEdit.css' , titulo:'registro'}) %>
+            <main>
+                
+                <form action="../productos/productCreate" method="POST" enctype="multipart/form-data">
+                    <h3>ALTA PRODUCTO</h3>
+                    
+                    <br>
+                    <div><label class="form1" for="id">Id: </label>
+                    <input type="number" name="id" required></div>
+                    <br>
+                    <div><label class="form1" for="category">Nombre de categoria:</label></div>
+                    <div></div><input type="text" name="category" placeholder="ej CERVEZA" required></div>
+                    <BR>
+                        <br>
+                    <div><label class="form1" for="name">Nombre producto:</label></div>
+                    <div></div><input type="text" name="name" placeholder="ej Warsteiner" required></div>
+                    <BR>
+                    <div><label class="form1" for="description">Detalle</label></div>
+                    <div><textarea name="description" rows="10" style="width:100%" placeholder="Descripción detallada" ></textarea>
+                    </div>
+                    <BR>
+                    <div><label class="form1" for="image">Seleccionar una imagen de producto:</label></div>
+                    <div><input type="file" name="image" accept=".jpg" multiple style="width: 90%;" required></div>
+                    <BR>
+                       
+                    <div class="contenedorPrecioStock">
+                        <div><label  for="price">Precio</label> 
+                        <input type="number" name="price" style="width: 30%;" required>
+                        </div>
+                        <div><label  for="discount">Descuento: %</label>
+                            <input type="number" name="discount"  style="width: 30%"; required>
+                        </div>
+                        <div><label  for="stock">Stock </label>
+                            <input type="number" name="stock"  style="width: 30%"; required>
+                        </div>
+                    </div>
+                    <BR>
+                    <div><label  for="oferta">Oferta:</label>
+                        <input type="radio" name="oferta" value="SI" required>SI
+                        <input type="radio" name="oferta" value="NO" required>NO
+                    </div>
+                    <BR>
+                    <div style="text-align:center;"><button type="submit">GUARDAR</button>
+                        <button type="reset"> Cancelar </button>
+                       
+                    </div>
+                </form>
+            </main>
+
+            <%- include ('../partials/footer', {hojaDeEstilo: 'register.css' , titulo:'registro'}) %>
+    </body>
+
+</html>

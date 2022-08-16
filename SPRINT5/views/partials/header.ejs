@@ -1,0 +1,44 @@
+<header>
+            
+    <div class="logo-barra-contenedor">
+        <a href="/" class="logo" ><img src="../images/logonuevo.jpg" alt="Logo" title="Logo ebedidas" style="width: 40%;" ></a>
+
+        <i class="barra-contenedor" >
+                <input  size="22" type="text" class="barra">
+                <i class="fa fa-search"></i>
+        </i>
+    
+        <nav class="menu_header">
+
+            <%if (typeof user != 'undefined') { %>
+                <div class="text-danger">
+                  Hola  <%= user.firstName %>
+                  <div><a href="/user/logout" style="text-decoration: none ;">salir<i class="fas fa-user separarH"></i></a></div>
+                </div>  
+            <% }else {%>      
+            <div><a href="/user/register" style="text-decoration: none ;">Creá tu cuenta<i class="fas fa-user separarH"></i></a></div>
+            <div><a href="/user/login" style="text-decoration: none;">Ingresá<i class="fas fa-sign-in-alt separarH"></i></a></div>
+            <% }%>
+            <div style="padding-top:10px ;font-size:larger"><a href="/productos/productCart" style="text-decoration: none;"><i class="fas fa-shopping-cart"></i></a></div>
+        </nav>  
+
+
+
+    </div>
+        <br>
+        <div class="menu_contenedor">
+                
+                <a href="/" ><i class="fas fa-home" class="separarH"></i> Home</a>
+                <a href="/productos/productDetail">Productos</a>
+                <a href="/user/Quienes_somos">Quienes somos</a>
+                <a href="/user/Contacto">Contacto</a>
+
+        </div>
+        <i class="fa-regular fa-cart-shopping"></i>
+
+        <div class="burger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <br>
+        
+</header>

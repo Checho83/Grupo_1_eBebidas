@@ -1,0 +1,112 @@
+[
+    {
+        "id": "1",
+        "name": "Brouwerij",
+        "price": "100",
+        "discount": "50",
+        "category": "cereveza",
+        "stock": "33",
+        "description": "Hermosa cerveza rubia oscura con un pronunciado sabor a lúpulo de los lúpulos Cascade y Citra. Una auténtica IPA inglesa.",
+        "image": "articulo1.jpg",
+        "offer": "SI"
+    },
+    {
+        "id": "2",
+        "name": "Miller",
+        "price": "100",
+        "discount": "50",
+        "category": "cereveza",
+        "stock": "33",
+        "description": "Hermosa cerveza rubia oscura con un pronunciado sabor a lúpulo de los lúpulos Cascade y Citra. Una auténtica IPA inglesa.",
+        "image": "articulo2.jpg",
+        "offer": "NO"
+    },
+    {
+        "id": "3",
+        "name": "Imperial",
+        "price": "400",
+        "discount": "40",
+        "category": "cereveza",
+        "stock": "33",
+        "description": "Con dos lupulos cuidadosamente seleccionados, para encontrar el perfecto equilibrio entre el aroma y el amargor justo.",
+        "image": "imperial (1).jpg",
+        "offer": "NO"
+    },
+    {
+        "id": "4",
+        "name": "Imperial",
+        "price": "400",
+        "discount": "50",
+        "category": "cereveza",
+        "stock": "33",
+        "description": "Con dos lupulos cuidadosamente seleccionados, para encontrar el perfecto equilibrio entre el aroma y el amargor justo.",
+        "image": "imperial-amber.jpg",
+        "offer": "NO"
+    },
+    {
+        "id": "5",
+        "name": "wastein",
+        "price": "400",
+        "discount": "50",
+        "category": "cereveza",
+        "stock": "33",
+        "description": "Con dos lupulos cuidadosamente seleccionados, para encontrar el perfecto equilibrio entre el aroma y el amargor justo.",
+        "image": "wastein.jpg",
+        "offer": "SI"
+    },
+    {
+        "id": "6",
+        "name": "Miller",
+        "price": "400",
+        "discount": "50",
+        "category": "cereveza",
+        "stock": "33",
+        "description": "Con dos lupulos cuidadosamente seleccionados, para encontrar el perfecto equilibrio entre el aroma y el amargor justo.",
+        "image": "miller.jpg",
+        "offer": "SI"
+    },
+    {
+        "id": "7",
+        "name": "Salta",
+        "price": "150",
+        "discount": "20",
+        "category": "Cerveza",
+        "offer": "SI",
+        "stock": "120",
+        "description": "Hermosa Rubia del norte argentino",
+        "image": "Salta-Cautiva.jpg"
+    },
+    {
+        "id": "8",
+        "name": "Amstel",
+        "price": "163",
+        "discount": "20",
+        "category": "Cerveza",
+        "offer": "SI",
+        "stock": "100",
+        "description": "Una cerveza hecha con PURA MALTA, suave, refrescante y de calidad, que proviene de las características de su ciudad de origen: AMSTERDAM. El sabor de Amstel deriva del equilibrio entre tradición y modernidad.",
+        "image": "amstell.jpg"
+    },
+    {
+        "id": "9",
+        "name": "Grolsch",
+        "price": "252",
+        "discount": "10",
+        "category": "Cerveza",
+        "offer": "NO",
+        "stock": "50",
+        "description": "Grolsch es una cerveza de origen holandes tipo Pilsener con 400 años de historia y vendida en más de 50 países. Sus ingredientes son reales y 100% naturales: doble lúpulo y 100% malta, sin aditivos, ni conservantes. Su distinguido sabor singular te hace sentir único en cada sorbo.",
+        "image": "grolsch.jpg"
+    },
+    {
+        "id": "20",
+        "name": "quilmes",
+        "price": "30",
+        "discount": "50",
+        "category": "cerveza",
+        "offer": "NO",
+        "stock": "35",
+        "description": "hola mundo",
+        "image": "imagen_cerveza_prueba.jpg"
+    }
+]
