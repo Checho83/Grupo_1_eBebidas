@@ -36,7 +36,7 @@ https://trello.com/proyectorintegradorgrupo1
 
 
 
-Notas Versión SPRINT3:
+Notas Versión SPRINT4:
  - Estructurado en modo MVC, implementación EJS
  - Agregado de partials (head, header, footer)
  - Página agregada (/productos/productEdit)
@@ -45,3 +45,10 @@ Notas Versión SPRINT3:
     constraseña:ADMIN
  - Cambio de fondos
 
+Notas Versión SPRINT5:
+ - Agregado sistema de verificación con Express Validator
+ - Verificación completa login y registro
+ - Creación de usuarios (user.json)
+ - Aplicación de cookies (recordar usuario) y session para mantenimiento de la sesión
+ - Aplicación de middlewares para validación y control de rutas para usuarios logueados. (los usuarios logueados no pueden acceder directamente por la url a REGISTRO o LOGUIN, deben desloguerse!). Si no estas logueado, y estas en la pagina de detalle de producto, al pulsar "añadir carrito", si no esta logueado el usuario, redirecciona a la página de loguin.
+ -División de la estructura de la página para soportar implementación directa con SQL(findAll, findOne, etc).
