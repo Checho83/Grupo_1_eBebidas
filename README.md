@@ -52,3 +52,6 @@ Notas Versión SPRINT5:
  - Aplicación de cookies (recordar usuario) y session para mantenimiento de la sesión
  - Aplicación de middlewares para validación y control de rutas para usuarios logueados. (los usuarios logueados no pueden acceder directamente por la url a REGISTRO o LOGUIN, deben desloguerse!). Si no estas logueado, y estas en la pagina de detalle de producto, al pulsar "añadir carrito", si no esta logueado el usuario, redirecciona a la página de loguin.
  -División de la estructura de la página para soportar implementación directa con SQL(findAll, findOne, etc).
+ - Acceso a pagina de productos y su edición a traves de:
+ correo: admin@admin.com
+ pass:admin

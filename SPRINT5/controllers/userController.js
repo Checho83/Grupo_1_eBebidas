@@ -46,7 +46,10 @@ const userController = {
           if(req.body.recordame != undefined) 
             res.cookie('recordame', userToLogin.email,{maxAge:100000})
 
-          res.redirect('../');
+          if (userToLogin.email == 'admin@admin.com')
+            res.render('productos/productCreateEdit');
+          else  
+            res.redirect('../');
 
         }else {      
           res.render('user/login', {
