@@ -46,13 +46,14 @@ const userController = {
           if(req.body.recordame != undefined) 
             res.cookie('recordame', userToLogin.email,{maxAge:100000})
 
-          if (userToLogin.email == 'admin@admin.com')
+          if (userToLogin.email == 'admin@admin.com'){
             res.render('productos/productCreateEdit');
-          else  
-            res.redirect('../');
-
+          }else { 
+            return res.redirect('../');
+          } 
+            
         }else {      
-          res.render('user/login', {
+          return res.render('user/login', {
           errors:{
             email:{
               msg: 'Credenciales inválidas'
@@ -64,7 +65,7 @@ const userController = {
       res.render('user/login', {
         errors:{
           email:{
-            msg: 'Email no encontrado en la base de datos'
+            msg: 'Email no registrado'
           }
         }
       });

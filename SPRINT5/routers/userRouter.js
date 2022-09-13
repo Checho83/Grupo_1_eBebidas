@@ -100,6 +100,7 @@ const upload = multer({ storage: storage });
 
 router.get('/login',guestMiddleware, userController.login);
 router.get('/logout', userController.logout);
+router.get('/logout', userController.logout);
 router.post('/login', validateLogin , userController.processlogin);
 router.post('/register', upload.single('avatar'),validateRegister, userController.storeUser);
 router.get('/register',guestMiddleware, userController.register);

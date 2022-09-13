@@ -1,0 +1,132 @@
+<html class="letra">
+    <%- include ('../partials/head', {hojaDeEstilo: 'productCart.css', titulo:'carrito'}) %>  
+
+
+        <script type="text/javascript" >
+            function doFunction(){
+                var cant1 = document.getElementById("cantidad1").value;        
+                var valor_total_1 =cant1*124;
+                document.getElementById('cantidad_comprar_1').innerHTML = cant1;
+                document.getElementById('valor_total_1').innerHTML = valor_total_1;
+
+                var cant2 = document.getElementById("cantidad2").value;        
+                var valor_total_2 =cant2*450;
+                document.getElementById('cantidad_comprar_2').innerHTML = cant2;
+                document.getElementById('valor_total_2').innerHTML = valor_total_2;
+            }
+		</script>
+   
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'productCart.css', titulo:'Carrito'}) %>  
+        
+        </header>
+        <main>
+            <br>
+            <h3>ARTICULOS CARRITO DE COMPRAS:</h3>
+            <br>
+            <div >
+            <article class="articulos-carrito">
+            
+                <div style="width: 20%">
+                    <img class="imagenOfertas" src="../images/wastein.jpg" alt="oferta1" title="oferta1" style="height: fit-content; width: 25%;">
+                </div>
+                <div style="width:20%">
+                    <div>
+                        <h3>Warsteiner gold</h3>
+                    </div>
+                </div>
+               
+                <div>
+                    <p style="font-weight:bolder ;">CERVEZA(S)</p>
+
+                   <form action="/home" method="get">
+                        <label class="separarH2">Cantidad</label>
+                        <select id="cantidad1" name="cantidad" onchange="doFunction();">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                       
+                   </form>
+                        
+                </div> 
+                <div style="width: 10%;font-weight:bolder ;">
+                    <div><label id="cantidad_comprar_1">1</label>x</div>
+                    <div>Desc:</div>
+                    <div>Total:</div>
+                </div>
+                <div style="width: 10%;">
+                    <div>125</div>
+                    <div>0</div>
+                    <div><label id="valor_total_1">125</label></div>
+                    
+                </div>
+                <div style="width: 10%;">
+                    <button type="submit" style="padding: 2%">X</button>
+
+                </div>           
+            </article>
+            <article class="articulos-carrito">
+            
+                <div style="width: 20%">
+                    <img class="imagenOfertas" src="../images/articulo1.jpg" alt="oferta1" title="oferta1" style="height: fit-content; width: 25%;">
+                </div>
+                <div style="width:20%">
+                    <div>
+                        <h3>Brouwerij IPA</h3>
+                    </div>
+                </div>
+               
+                <div>
+                    <p style="font-weight:bolder ;">CERVEZA(S)</p>
+
+                   <form action="/home" method="get">
+                        <label class="separarH2">Cantidad</label>
+                        <select id="cantidad2" name="cantidad" onchange="doFunction();">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                       
+                   </form>
+                        
+                </div> 
+                <div style="width: 10%;font-weight:bolder ;">
+                    <div><label id="cantidad_comprar_2">1</label>x</div>
+                    <div>Desc:</div>
+                    <div>Total:</div>
+                </div>
+                <div style="width: 10%;">
+                    <div>450</div>
+                    <div>0</div>
+                    <div><label id="valor_total_2">450</label></div>
+                    
+                </div>
+                <div style="width: 10%;">
+                    <button type="submit" style="padding: 2%">X</button>
+                </div>           
+            </article>
+            </div>
+            <div style="text-align:center;margin-top: 5%; "><button type="submit" style="border-radius: 5px;border: 2px black solid;padding: 1%;background-color: whitesmoke;color:blue;"><i style="font-size:3em;" class="fas fa-shopping-cart"></i></button></div> 
+        <br>
+        </main>
+        
+        <%- include ('../partials/footer', {hojaDeEstilo: 'productCart.css', titulo:'Carrito'}) %>  
+    </body>
+    </html>
+</body>
+</html>
