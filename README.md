@@ -56,4 +56,10 @@ Notas Versión SPRINT5:
  correo: admin@admin.com
  pass:admin
 
+ Notas Versión SPRINT6:
+ - Agregado control por base de datos (ebebidas_db.sql)
+ - CRUD usuario y productos
+ - Acceso al CRUD  usuario y productos:
+ Para el CRUD de productos, se utiliza la información de db para los SELECT
+ correo: admin@admin.com
  
