@@ -1,0 +1,127 @@
+<html class="letra">
+<%- include ('../partials/head', {hojaDeEstilo: 'detail.css' , titulo:'registro'}) %>
+
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'detail.css', titulo:'registro'}) %>
+            <main>
+                <br>
+                <article class="createProduct">
+                <form class="creations" action="../productos/productCreate" method="POST" enctype="multipart/form-data">
+                    <br>
+
+                    <h3 class="titulo">ALTA PRODUCTO</h3>
+                    <BR>
+                    <div class="form-inicio">
+                            <div class="abajo" >
+                                <label  for="name">Nombre del producto:</label>
+                                <input 
+                                    class = "inputData"
+                                    type="text" 
+                                    name="name" 
+                                    id="name"
+                                    placeholder="ej Warsteiner">
+                            </div>
+                            
+                     
+                             <div class="abajo">
+                                 <label  for="name">Categoria:</label>
+                                
+                                 <select class = "inputData" name="category">
+                                 <% for(let index = 0; index < categories.length;index++) {%> 
+                                  <option value="<%=categories[index].dataValues.id%>"><%=categories[index].dataValues.name %></option>  
+                                 <% } %> 
+                                </select>
+                            </div>
+                        
+                            <div class="abajo">
+                                <label  for="name">Marca:</label>
+                     
+                                <select  class = "inputData" name="brand">
+                                <% for(let index = 0; index < brands.length;index++) {%> 
+                                <option value="<%=brands[index].dataValues.id%>"><%=brands[index].dataValues.name %></option>  
+                                 <% } %> 
+                                 </select>
+                           </div>
+                        
+                    </div>
+                    <div class="errores">
+                        <ul></ul>
+                    </div>
+                        <div class="ancho">
+                                <label  for="description">Descripción:</label>
+                                    <textarea 
+                                        name="description" id="description"
+                                        rows="10" style="width:100%"
+
+                                        <% if(locals.errors && errors.description){ %>  
+                                            placeholder="<%= errors.description.msg %>"
+                                        <% }else{ %>
+                                            placeholder="<%= locals.oldData ? oldData.description : "Aquí va la descripción (+ de 20 caracteres)"%>"
+                                        <%} %>        
+                                    ></textarea>
+                        </div>         
+                    <BR>
+                        <div class="ancho">
+                                <label  for="image" id="imageID">Imagen:</label>
+                                
+                                <input type="file" name="image" id="image" accept=".jpg" multiple style="width: 90%;">
+                        </div>
+                    <BR>
+                       
+                    <div class="form-fin">
+                        <div class="abajo">
+                            <label class="form1" for="price">Precio</label> 
+                            <input  class="inputData"
+                            type="number" 
+                            name="price" 
+                            id="price"
+                            placeholder="">
+                        </div>
+                        <div class="abajo">
+                            <label class="form1" for="discount">Descuento(%): </label>
+                            <input class="inputData"
+                                type="number"
+                                name="discount"
+                                id="discount" 
+                                placeholder="">
+                        </div>
+                        <div class="abajo">
+                            <label class="form1" for="stock">Stock </label>
+                            <input class="inputData"
+                                type="number"
+                                name="stock" 
+                                id="stock"
+                                placeholder="">
+                        </div>
+                    </div>
+
+                    <div style="text-align:  center">
+                        <label  for="oferta" id="labelCheck">Oferta:</label>
+                        <input class="separarH2" type="radio" id="offer" name="oferta" value="SI" >SI
+                        <input class="separarH2" type="radio" id="offer" name="oferta" value="NO" >NO
+                    </div>
+                    <BR>
+
+                        <div class="buttons_contenedor">
+                           <div class="button_contenedor"  >
+                               <button class="button"  type="submit">GUARDAR / EDITAR</button>
+                           </div>
+                           <div class="button_contenedor"   >
+                               <button class="button"  type="reset">CANCELAR</button>
+                           </div>
+                           <div class="button_contenedor"  >
+                               <a href="/createEdit" ><input class="button"  type="button"  value="VOLVER"></a>
+                           </div>
+                        </div>
+                    <br>
+                </form>
+                
+                </article>
+                <br>
+            </main>
+            <%- include ('../partials/footer', {hojaDeEstilo: 'detail.css' , titulo:'registro'}) %>
+
+            <script src="/js/productValidation.js"></script>  
+    </body>
+
+</html>

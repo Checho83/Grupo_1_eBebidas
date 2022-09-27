@@ -1,0 +1,74 @@
+<html class="letra">
+    <%- include ('./partials/head', {hojaDeEstilo: 'index.css', titulo:'home'}) %> 
+    <body>
+        
+        <%- include ('./partials/header', {hojaDeEstilo: 'index.css', titulo:'Home'}) %>  
+
+        <main>
+
+            <div><img  src="images\oferta-inicial.jpg" alt="banner Ofertas" title="banner ebebidas" style="width:100%" ></div>
+            <section>
+                <br>
+                <h2 class="titulos">OFERTAS</h2>
+                <br>
+
+                
+                    <div class="articulos-contenedor">
+                        <% for (let item of productos) { %> 
+                           <%  if (item.offer == "SI"){ %>  
+                                <div class = "articulo">
+                                    <img class="imagenOfertas" src="images/<%= item.image %>" alt="oferta1" title="oferta1">
+                                    <div class="contenido">
+                                        <div class="radio"><i class="fas fa-truck camion"></i></div>
+                                        <div class="precio"> $<%= item.price %></div>
+                                        <div class="descuento"><%= item.discount %>% OFF</div>
+                                        <br>
+                                        <div class="descripcion"><b><%= item.name %></b></div>
+                                    </div>
+                                </div>
+                                <% } %> 
+                    <% } %> 
+            </section>
+            <br>
+            <section>
+                <br>
+                <H2 class="titulos">PRODUCTOS</H2>
+                <br>
+                <div class="articulos-contenedor">
+                    <div class = "articulo">
+                        <a href="/productos/productDetail" style=" text-decoration: none;" ><img class="imagen" src="images/vinos.jpg" alt="Vinos" title="Vinos">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Una copa de vino no se le niega a nadie...</b></div></a>
+                        </div>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/productos/productDetail" style=" text-decoration: none;"><img class="imagen" src="images/cervezas.jpg" alt="Cervezas" title="Cervezas">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Quién se tomó mi cerveza!!!</b></div></a>
+                        </div>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/productos/productDetail" style=" text-decoration: none;"><img class="imagen" src="images/destilados.jpg" alt="Destilados" title="Destilados">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Se vienen los tragos fuertes..</b></div></a>
+                        </div>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/productos/productDetail" style=" text-decoration: none;"><img class="imagen" src="images/cocteles.jpg" alt="Cocteleria" title="Cocteleria">
+                        <div class="contenido">
+
+                            <div class="descripcion"><b>Me voy a lucir con este trago..</b></div></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div><img  src="images\bannerfondo.jpg" alt="banner Ofertas" title="banner ebebidas" style="width:100%" ></div>
+            <br>
+        </main>    
+        
+        <%- include ('./partials/footer', {hojaDeEstilo: 'index.css', titulo:'Home'}) %>  
+    </body>
+</html>

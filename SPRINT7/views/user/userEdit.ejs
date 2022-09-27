@@ -1,0 +1,91 @@
+<html class="letra">
+
+    <%- include ('../partials/head', {hojaDeEstilo: 'detail.css' , titulo:'Detalle'}) %>
+
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'detail.css' , titulo:'Detalle'}) %>
+
+            <main>
+                <br>
+
+                    <form action="../user/<%=user.id%>" method="POST">
+
+                        <article class="editProduct">
+
+                        <div style="width: 30%;text-align: center;">
+                            <img class="imagenOfertas" src="../images/users/<%= user.avatar %> " alt="oferta1" title="oferta1"
+                                style="height: fit-content;">
+                        </div>
+                        <div>
+                            <br>
+                            <div><h3>EDITAR EL CLIENTE SELECCIONADO</h3></div>
+                            <br>
+                            <div><label class="form1" for="id">ID cliente: <%=user.id%></label>
+                            <!-- <input type="number" name="id" value=<%=user.id%>> -->
+                            </div>
+                            <br>
+                            <div><label class="form1" for="firstName">Nombre:</label>
+                            <input type="text" name="firstName" value=<%=user.firstName%>>
+                            </div>
+                            <BR>
+                            <div><label class="form1" for="lastName">Apellido:</label>
+                            <input type="text" name="lastName" value=<%=user.lastName%>>
+                            </div>
+                            <BR>
+                            <div><label class="form1" for="email">email:</label>
+                            <input type="email" name="email" value=<%=user.email%>>
+                            </div>
+                            <BR>
+                            <div><label class="form1" for="phone">Telefono:</label>
+                            <input type="number" name="phone" value=<%=user.phone%>>
+                            </div>
+                            <BR>
+                            <div><label class="form1" for="address">Dirección:</label>
+                            <input type="text" name="address" value=<%=user.address%>>
+                            </div>
+                            <BR>
+                            <div><label class="form1" for="city">Ciudad:</label>
+                            <input type="text" name="city" value=<%=user.city%>>
+                            </div>
+                            <BR>
+                            <div><label class="form1" for="province">Provincia:</label>
+                            <input type="text" name="province" value=<%=user.province%>>
+                            </div>
+                            <BR>
+                            <div><label class="form1" for="cp">Cp:</label>
+                            <input type="number" name="cp" value=<%=user.cp%>>
+                            </div>
+                            <BR>                 
+                            <div><label class="form1" for="birthdate">Fecha de nacimiento:</label>
+                            <input type="date" name="birthdate" value=<%=user.birthdate%>>
+                            </div>
+                            <div><label for="avatar">Imagen de perfil: <%=user.avatar%></label>   
+                            <!-- <input type="file" name="avatar" accept=".jpg" multiple style="font-size:15px ;"  value=<%=user.avatar%>></div> -->
+                            </div>
+               
+                            <BR> 
+                            
+                            <div style="text-align: center" >
+                                    <button style="text-align: center;font-size: 18px" type="submit">GUARDAR / EDITAR</button>   
+                                    <button style="text-align: center;font-size: 18px"  type="reset">CANCELAR</button>   
+                                    <a href="/user/userList" style="text-decoration: none;"><input style="text-align: center;font-size: 18px"  type="button"  value="VOLVER"></a>    
+                            </div>
+                            
+                            <BR> 
+                    </div>
+
+
+                    </article>
+                        <BR>  
+                    </form> 
+                <!-- </article> -->
+                <br>
+            </main>
+
+            <%- include ('../partials/footer', {hojaDeEstilo: 'detail.css' , titulo:'Detalle'}) %>
+    </body>
+
+</html>
+</body>
+
+</html>

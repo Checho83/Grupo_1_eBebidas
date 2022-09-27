@@ -1,0 +1,97 @@
+<html class="letra">
+<%- include ('../partials/head', {hojaDeEstilo: 'detail.css' , titulo:'Detalle'}) %>
+
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'detail.css' , titulo:'Detalle'}) %>
+
+            <main>
+                <br>
+                <article class="editProduct">
+                    <div style="width: 35%;text-align: center;">
+                        <img class="imagenOfertas" src="../images/<%= items.image %> " alt="oferta1" title="oferta1"
+                            style="height: fit-content; width: 40%;">
+                    </div>
+
+                    <form action="../productos/<%= indexProducto%>" method="POST" >
+                        <br>
+                            <h3>EDITAR EL PRODUCTO SELECCIONADO</h3>
+                        <br>
+                        <div><label class="form1" for="id">ID producto:</label>
+                            <input type="number" name="id" value=<%=items.id%>>
+                        <br>
+                        <div><label class="form1" for="name">Nombre producto:</label>
+                            <input type="text" name="name" value=<%=items.name%>>
+                        </div>
+                        <BR>
+                        <div>
+                            <label class="form1" for="category">Categoría actual: <%=items.product_category.name %></label>
+                        </div>
+                        <select name="category">
+                            <% for(let index = 0; index < categories.length;index++) {%> 
+                            <option value="<%=categories[index].dataValues.id%>"><%=categories[index].dataValues.name %></option>  
+                            <% } %> 
+                        </select>
+                        </div>
+                        <BR>
+                        <div>
+                            <label class="form1" for="brand">Marca: <%=items.product_brand.name %></label>
+                        </div>
+                        <div>
+                        <select name="brand">
+                            <% for(let index = 0; index < brands.length;index++) {%> 
+                            <option value="<%=brands[index].dataValues.id%>"><%=brands[index].dataValues.name %></option>  
+                        <% } %> 
+                        </select>
+                        </div>
+                        <BR>
+                        <div>
+                            <label class="form1" for="price">Precio del producto:$</label>
+                            <input type="number" name="price" value=<%=items.price%>>
+                        </div>
+                        <BR>
+                     
+                        <div>
+                            <label class="form1" for="discount">Descuento del producto:%</label>
+                            <input type="number" name="discount" value=<%=items.discount%>>
+                        </div>
+                        <BR>
+                            <div><label  for="oferta">Oferta - Valor actual: <%=items.offer%></label></div>
+                        <div><input type="radio" name="offer" value=SI >SI
+                            <input type="radio" name="offer" value=NO >NO</div>
+                        </div>
+                        <BR>
+                     
+                        <div><label class="form1" for="stock">Stock del producto (unidades):</label>
+                        <input type="number" name="stock" value=<%=items.stock%>>
+                        </div>
+                        <br>
+                        <div>
+                            <label class="form1" for="description">Descripción</label>
+                        </div>
+                        <div>
+                            <textarea name="description" rows="10" style="width:100%"><%=items.description%></textarea>
+                        </div>
+                        <BR>
+                       <div><label class="form1" for="image">Imagen de producto: <%=items.image%></label></div>
+         
+                         <!-- <div><input type="file" id="name" name="image" accept=".jpg" multiple style="width: 90%;" ></div> -->
+                        <BR>
+                                          
+                        <div style="text-align: center" >
+                            <button style="text-align: center;font-size: 18px" type="submit">GUARDAR / EDITAR</button>
+                            <button style="text-align: center;font-size: 18px"  type="reset">CANCELAR</button>
+                            <a href="/productos/productList" style="text-decoration: none;"><input style="text-align: center;font-size: 18px"  type="button"  value="VOLVER"></a>
+                        </div>
+                        <BR>  
+                    </form> 
+                </article>
+                <br>
+            </main>
+
+            <%- include ('../partials/footer', {hojaDeEstilo: 'detail.css' , titulo:'Detalle'}) %>
+    </body>
+
+</html>
+</body>
+
+</html>
