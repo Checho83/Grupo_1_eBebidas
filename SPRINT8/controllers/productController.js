@@ -291,7 +291,7 @@ const productController = {
 		console.log(category_data);
 		product.findByPk(indexProduct, {include:[{association: "product_brand"},{association: "product_category"}]})
 		.then(product => {
-		  return res.render('productos/productEdit',{items:product.dataValues, indexProducto, brands:brand_data,categories:category_data,userlog: req.session.userLogged });
+		  return res.render('productos/productEdit',{items:product.dataValues, indexProducto:indexProduct, brands:brand_data,categories:category_data,userlog: req.session.userLogged });
 		});
 		})
 
