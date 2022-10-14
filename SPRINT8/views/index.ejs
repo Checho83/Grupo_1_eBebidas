@@ -1,0 +1,93 @@
+<html class="letra">
+    <%- include ('./partials/head', {hojaDeEstilo: 'index.css', titulo:'home'}) %> 
+    <body>
+        
+        <%- include ('./partials/header', {hojaDeEstilo: 'index.css', titulo:'Home'}) %>  
+
+        <main>
+
+            <div><img  src="images\oferta-inicial.jpg" alt="banner Ofertas" title="banner ebebidas" style="width:100%" ></div>
+            <section>
+                <br>
+                <h4 class="titulos">OFERTAS</h4>
+
+                <div class="swiffy-slider slider-item-show3 slider-item-reveal slider-nav-dark slider-nav-outside-expand">
+                    <ul class="slider-container py-4" id="slider2">
+                        <% for (let item of productos) { %> 
+                            <%  if (item.offer == "SI"){ %>  
+                                <li class="articulo" >
+                                <a href="/productos/oferta<%=item.id %>" style=" text-decoration: none;">    
+                                <div class="card shadow w-100">
+                                    
+                                    <div class="ratio ratio-1x1" style="display: flex;">
+                                        <img src="images/offer.png" style="width: 30%;height: auto;mix-blend-mode: multiply;background-color: white;z-index: 1;">
+                                        <div class="descuento"><img src="images/<%= item.image %>" class="card-img-top" loading="lazy" alt="..." style="padding-top:5%;width: 35%;height: 90%;">
+                                        <%= item.discount %>% OFF</div>     
+                                    </div>
+                                    <div class="card-body d-flex flex-column flex-md-row">
+                                        <div class="flex-grow-1">
+                                            <strong><%= item.name %></strong>
+                                            <!-- <p class="card-text"><%= item.name %></p> -->
+                                        </div>
+                                        <div class="px-md-2">$<%= item.price %></div>
+                                    </div>
+                                </div>
+                                </a>  
+                                </li>
+                                <% } %> 
+                         <% } %> 
+                   
+                    </ul>
+                
+                    <button type="button" class="slider-nav" aria-label="Go to previous"></button>
+                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go to next"></button>
+                
+
+                </div>
+                
+
+            </section>
+
+            <section>
+                <br>
+                <H4 class="titulos">PRODUCTOS</h4>
+                <br>
+                <div class="articulos-contenedor">
+                    <div class = "articulo">
+                        <a href="/productos/vinos" style=" text-decoration: none;" ><img class="imagen" src="images/vinos.jpg" alt="Vinos" title="Vinos">
+                            <div class="contenido">
+                            <div class="descripcion"><b>Una copa de vino no se le niega a nadie...</b></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/productos/cervezas" style=" text-decoration: none;"><img class="imagen" src="images/cervezas.jpg" alt="Cervezas" title="Cervezas">
+                            <div class="contenido">
+                                <div class="descripcion"><b>Quién se tomó mi cerveza!!!</b></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/productos/destilados" style=" text-decoration: none;"><img class="imagen" src="images/destilados.jpg" alt="Destilados" title="Destilados">
+                            <div class="contenido">
+                                <div class="descripcion"><b>Se vienen los tragos fuertes..</b></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class = "articulo">
+                        <a href="/productos/Cocteleria" style=" text-decoration: none;"><img class="imagen" src="images/cocteles.jpg" alt="Cocteleria" title="Cocteleria">
+                            <div class="contenido">
+                            <div class="descripcion"><b>Me voy a lucir con este trago..</b></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <div style="background-color: black;text-align: center;"><img  src="images\cocteleriabotton.jpg" alt="banner Ofertas" title="banner ebebidas" style="width: fit-content;" ></div>
+            <br>
+        </main>    
+        
+        <%- include ('./partials/footer', {hojaDeEstilo: 'index.css', titulo:'Home'}) %>  
+    </body>
+</html>

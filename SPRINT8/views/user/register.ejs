@@ -1,0 +1,199 @@
+<html class="letra">
+<%- include ('../partials/head', {hojaDeEstilo: 'register.css' , titulo:'registro'}) %>
+
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'register.css' , titulo:'registro'}) %>
+
+            <main>
+                
+                <form class="register" action="/user/register" method="POST" style="line-height : 30px; font-size:18px ;"
+                    enctype="multipart/form-data">
+
+                    <h3>REGISTRO USUARIOS</h3>
+
+                    <div class="form_contenedor">
+                        
+                        <div class="campos-estilo">
+                            <label for="firstName">Nombre</label>
+                            <br>
+                            <input 
+                                type="text"
+                                name="firstName"
+                                id="firstName" 
+                                size="40"
+                                class="form-input"
+                                <% if(locals.errors && errors.firstName){ %>  
+                                    placeholder="<%= errors.firstName.msg %>"
+                                <% }else{ %>
+                                    value="<%= locals.oldData ? oldData.firstName : null%>"
+                                <%} %> >                             
+                        </div>
+
+                        <div class="campos-estilo">
+                            <label for="lastName" >Apellido</label>
+                            <br>
+                            <input 
+                                type="text"
+                                name="lastName"
+                                id="lastName" 
+                                size="40"
+                                class="form-input"
+                                <% if(locals.errors && errors.lastName){ %>  
+                                    placeholder="<%= errors.lastName.msg %>"
+                                <% }else{ %>
+                                    value="<%= locals.oldData ? oldData.lastName : null%>"
+                                <%} %> >                             
+                        </div>
+  
+                    </div>
+
+                    <div class="form_contenedor">
+                        <div class="campos-estilo" > 
+                            <label for="email">Email</label>
+                            <br>
+                                <input type="email"
+                                    name="email" 
+                                    id="email" 
+                                    size="40"
+                                    class="form-input"        
+                                <% if(locals.errors && errors.email){ %>  
+                                    placeholder="<%= errors.email.msg %>"
+                                <% }else{ %>
+                                    value="<%= locals.oldData ? oldData.email : null%>"
+                                <%} %> >             
+                        </div>
+                        <div class="campos-estilo" > 
+                            <label for="phone">Telefono</label>
+                            <br>
+                                <input  type="number"
+                                        name="phone"
+                                        size="40"
+                                        class="form-input"        
+                                <% if(locals.errors && errors.phone){ %>  
+                                    placeholder="<%= errors.phone.msg %>"
+                                <% }else{ %>
+                                    value="<%= locals.oldData ? oldData.phone : null%>"
+                                <%} %> >             
+                        </div>
+                    </div>
+
+                    <div class="form_contenedor">
+                    <div > 
+                        <label for="birthdate">Fecha de Nacimiento</label>
+                        <br>
+                            <input type="date" name="birthdate" size="40" value="<%= locals.oldData ? oldData.birthdate : null%>"                                          
+                            <% if(locals.errors && errors.birthdate){ %>  
+                                 class="text-danger"
+                            <% } %>> 
+                            <%if (locals.errors && errors.birthdate) { %>
+                                <div class="text-danger">
+                                    <%= errors.birthdate.msg %>
+                                </div>
+                            <% } %>                        
+                    </div>
+                   
+                    <div>                        
+                        <div><label for="isOld">Sos mayor de 18? </label></div>
+                        <label for="isOld">SI </label><input type="radio" value="SI" name="isOld"
+                            <%=  locals.oldData && (oldData.isOld === "SI") ? 'checked' : null%>  >
+                        <label for="isOld">NO </label><input type="radio" value="NO" name="isOld" 
+                            <%= locals.oldData && (oldData.isOld === "NO") ? 'checked' : null%> >
+                    
+                        <%if (locals.errors && errors.isOld) { %>
+                             <div class="text-danger">
+                                    <%= errors.isOld.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                    </div>
+
+                    <div class="form_contenedor">
+                    <div class="campos-estilo"> 
+                        <label for="address">Domicilio</label>
+                     <br>
+                            <input   
+                                type="text" 
+                                name="address" 
+                                id="address" 
+                                size="40" 
+                                class="form-input"                             
+                            <% if(locals.errors && errors.address){ %>  
+                                placeholder="<%= errors.address.msg %>"
+                            <% }else{ %>
+                                value="<%= locals.oldData ? oldData.address : null%>"
+                            <%} %> >            
+                    </div>
+                                
+                    <div style="width: 50%;" >   
+                     <div><label for="avatar" id="avatarID">AVATAR: </label></div>   
+                     <DIV><input type="file" name="avatar" id="avatar" multiple style="font: size 16px;px ;"></div>
+                    </div>
+                </div>
+
+                    <div class="form_contenedor">
+                    <div  class="campos-estilo"> 
+                        <label for="pass">Contraseña</label>
+                        <div>
+                            <input   type="password" name="pass" id="pass" size="40" minlength="3" maxlength="15"
+                            <%if (locals.errors && errors.pass) { %>
+                                class="form-input-error"
+                                <% }else{ %>
+                             class="form-input"
+                            <%}%>>
+                            <%if (locals.errors && errors.pass) { %>
+                                <i class="text-danger">
+                                        <%= errors.pass.msg %>
+                                </i>
+                                 <% } %> 
+                            <i class="far fa-eye" id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i> 
+                        </div>          
+                    </div>
+                  
+                    <div  class="campos-estilo">                      
+                        <label for="passVerif">Reingresar contraseña</label>
+                        <div>
+                            <input   type="password" name="passVerif" 
+                            id="passVerif" size="40" size="40"minlength="3" maxlength="15"
+                            <%if (locals.errors && errors.passVerif) { %>
+                                class="form-input-error"
+                                <% }else{ %>
+                             class="form-input"
+                            <%}%>>
+                            
+                            <%if (locals.errors && errors.passVerif) { %>
+                                <i class="text-danger">
+                                        <%= errors.passVerif.msg %>
+                                </i>
+                                 <% } %> 
+                            <i id="togglePassword" style="margin-left: -30px; cursor: pointer;"></i>  
+                        </div>    
+                    </div>
+                    </div>
+
+                    <div>
+                        <ul>
+                            <li class="listPass" id="pass1">El pass debe tener al menos 8 caracteres</li>
+                            <li class="listPass" id="pass2">El pass debe tener caracteres especiales</li>
+                            <li class="listPass" id="pass3">El pass debe tener minusculas y mayusculas</li>
+                        </ul>
+                    </div>
+
+                    <br>
+                    <div>
+                        <button type="submit"> <img class="logo" src="../images/registro.jpg" alt="Logo_registro" title="Logo_registro"></button>
+                    </div>
+                    <br>
+                    <div>
+                        <button type="reset"> RESET </button>
+                    </div>
+                    
+                </form>
+                
+            </main>
+            
+            <%- include ('../partials/footer', {hojaDeEstilo: 'register.css' , titulo:'registro'}) %>
+
+            <script src="/js/registerValidation.js"></script>  
+    </body>
+
+</html>

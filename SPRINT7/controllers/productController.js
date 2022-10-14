@@ -176,6 +176,8 @@ const productController = {
 	},
 	detail: (req, res) => {
 		
+		
+
 		let indexProducto = req.params.id;
 
 		var brand_data;

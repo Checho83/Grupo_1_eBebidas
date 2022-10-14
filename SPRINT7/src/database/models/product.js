@@ -45,7 +45,7 @@ module.exports = (sequelize, dataTypes) => {
     }
     const product = sequelize.define(alias,cols,config);
 
-     //Aquí debes realizar lo necesario para crear las relaciones con el modelo (Movie)
+     //Aquí debes realizar lo necesario para crear las relaciones con el modelo 
      product.associate = models =>{
         product.belongsTo(
         models.brand,

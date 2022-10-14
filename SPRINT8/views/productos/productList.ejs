@@ -1,0 +1,48 @@
+<html class="letra">
+    <%- include ('../partials/head', {hojaDeEstilo: 'detail.css', titulo:'Detalle'}) %>     
+
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'detail.css', titulo:'Detalle'}) %>  
+      
+        <main>
+            <br>
+            <% for(let index = 0; index < productos.length;index++) {%> 
+            <article class="articulos-carrito">
+                <div style="width: 25%;text-align: center;">
+                  <img class="imagenOfertas" src="../images/<%= productos[index].image %> " alt="oferta1" title="oferta1" style="height: fit-content; width: 50%;"> 
+                </div>
+            <div  class="descripcionLista"> 
+                    <div>ID producto: <%= productos[index].id %> </div> 
+                    <div>Categoría: <%= productos[index].product_category.name %> </div> 
+                    <div>Nombre: <%= productos[index].name %></div>
+                    <div>Marca: <%= productos[index].product_brand.name %></div>
+                    <div>Precio:$  <%= productos[index].price %></div>
+                    <div>Descuento:  <%= productos[index].discount%>%</div>               
+                    <div>En Oferta:  <%=productos[index].offer%></div>
+                    <div>Stock Producto:  <%= productos[index].stock%> unidades</div>
+                    <div>Descripción: <%= productos[index].description%></div>
+            </div>
+       
+        <div>
+            <form action="<%= productos[index].id %>" method="get">                                    
+                <div><button type="submit" style="margin-right:20px; padding: 5%;width:95%;">EDITAR</button></div>
+                <br>
+            </form> 
+            <form action="<%= productos[index].id %>?_method=DELETE" method="POST"  onsubmit="return confirm('Esta seguro de borrar?');">
+                <div><button type="delete" style="margin-right:20px; padding: 5%;width:95%;">BORRAR</button></div>
+            <br>
+            </form>
+            <div> <a href="/createEdit" style="text-decoration: none;"><input type="button" style="margin-right:20px; padding: 5%;width:95%;"  value="VOLVER"></a></DIV>
+
+        </div>
+              
+        </article>
+        <% } %> 
+        <br>
+        </main>
+        
+        <%- include ('../partials/footer', {hojaDeEstilo: 'detailcss', titulo:'Detalle'}) %>  
+    </body>
+    </html>
+</body>
+</html>

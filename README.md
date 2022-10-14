@@ -63,3 +63,21 @@ Notas Versión SPRINT5:
  Para el CRUD de productos, se utiliza la información de db para los SELECT
  correo: admin@admin.com
  
+
+  Notas Versión SPRINT7:
+ - Agregadas validaciones en el front para Registro y productos
+ - Agregado express validator en pagina creacion de productos
+ Para acceso a la pagina de creacion, edicionde productos y gestion de usuarios:
+   correo: admin@admin.com
+   pass:admin
+
+
+  Notas Versión SPRINT8:
+ - Mejoras visuales varias, carrusel de productos
+ - Busqueda de productos en cada selección de la pagina principal
+ - Desarrollo de REACT, tablero general en función de la API
+ - Desarrollo de carrito de compras - funcionamiento parcial
+ 
+   correo: admin@admin.com
+   pass:admin
+

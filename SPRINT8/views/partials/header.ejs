@@ -1,0 +1,47 @@
+<header>
+            
+    <div class="logo-barra-contenedor">
+        <a href="/" class="logo" ><img src="../images/logoebebidas.png" alt="Logo" title="Logo ebedidas" style="width: 30%;padding: 2%;" ></a>
+
+        <i class="barra-contenedor" >
+                <input  size="22" type="text" class="barra">
+                <i class="fa fa-search" style="margin-left: -30px; cursor: pointer;"></i>
+        </i>
+        
+
+        <nav class="menu_header">
+            <%if (typeof userlog != 'undefined') { %>
+                
+                    <button style="background-color:ghostwhite;border:none;"  id="avatarLogo"> Hola  <%= userlog.firstName %><img class="avatar" src="../images/users/<%= userlog.avatar%>" alt="avatar" title="avatar"></button>
+                    <!-- <div><a href="/user/logout" style="text-decoration: none ;">salir<i class="fas fa-user separarH"></i></a></div> -->
+               
+            <% }else {%>      
+            <div><a href="/user/register" style="text-decoration: none ;">Creá tu cuenta<i class="fas fa-user separarH"></i></a></div>
+            <div><a href="/user/login" style="text-decoration: none;">Ingresá<i class="fas fa-sign-in-alt separarH"></i></a></div>
+            <% }%>
+            <div ><a href="/productos/productCart" style="text-decoration: none;"><i class="fas fa-shopping-cart" style="padding-top:10px ;font-size: 25px;"></i></a></div> 
+        </nav>  
+
+    </div>
+    
+        <br>
+        <div class="menu_contenedor">
+                
+                <a href="/" ><i class="fas fa-home" class="separarH"></i> Home</a>
+                <a href="/productos/productDetail">Productos</a>
+                <a href="/user/Quienes_somos">Quienes somos</a>
+                <%if ((typeof userlog != 'undefined')&&(userlog.email == 'admin@admin.com')){ %>
+                    <a href="/createEdit">Panel Admin</a>
+                <% }%> 
+                <a href="/user/Contacto">Contacto</a>
+
+        </div>
+        <i class="fa-regular fa-cart-shopping"></i>
+
+        <div class="burger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <br>
+        
+        <script src="/js/logoutAvatar.js"></script>  
+</header>

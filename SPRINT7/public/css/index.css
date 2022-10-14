@@ -284,14 +284,12 @@ main{
 .logo, .barra-contenedor, .menu_header{
      width:32%;
      font-size: 1rem;
-}
 
-.fa{
-    background-color: black ;
-    border: solid 2px blue ;
-    color:white;
-    border-radius: 5px ;
-}
+.fa {
+        background-color:;
+        color: black;
+        border-radius: 5px;
+    }
 
 .carrito{
     font-size: 100%;

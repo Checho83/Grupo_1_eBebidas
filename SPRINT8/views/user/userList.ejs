@@ -1,0 +1,50 @@
+<html class="letra">
+    <%- include ('../partials/head', {hojaDeEstilo: 'detail.css', titulo:'Detalle'}) %>     
+
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'detail.css', titulo:'Detalle'}) %>  
+      
+        <main>
+            <br>
+            <H2>LISTADO DE CLIENTES</H2>
+            <% for(let index = 0; index < users.length;index++) {%> 
+            <article class="listado-clientes ">
+                <div style="width: 25%;text-align: center;">
+                  <img class="avatarEstilo" src="../images/users/<%= users[index].avatar %> " alt="avatar" title="avatar" style="height: fit-content; width: 50%;"> 
+                </div>
+            <div  class="descripcionLista"> 
+                    <div>ID cliente: <%= users[index].id %> </div> 
+                    <div>Nombre: <%= users[index].firstName %> </div> 
+                    <div>Apellido: <%= users[index].lastName %></div>
+                    <div>email:  <%= users[index].email %></div>
+                    <div>Telefono:  <%= users[index].phone%></div>  
+                    <div>Fecha de nacimiento:  <%= users[index].birthdate%></div>             
+                    <div>Dirección:  <%=users[index].address%></div>
+                    <div>Ciudad: <%= users[index].city%></div>
+                    <div>Provincia:  <%= users[index].province%></div>
+                    <div>CP: <%= users[index].cp%></div>
+            </div>
+       
+            <div>
+                <form action="<%= users[index].id %>" method="get">                                  
+                    <div><button type="submit" style="margin-right:20px; padding: 5%;width:95%;">EDITAR</button></div>
+                    <br>
+                </form> 
+                <form action="<%= users[index].id %>?_method=DELETE" method="POST"  onsubmit="return confirm('Esta seguro de borrar?');">
+                    <div><button type="delete" style="margin-right:20px; padding: 5%;width:95%;">BORRAR</button></div>
+                <br>
+                </form>
+                <div> <a href="/createEdit" style="text-decoration: none;"><input type="button" style="margin-right:20px; padding: 5%;width:95%;"  value="VOLVER"></a></DIV>
+    
+            </div>
+                  
+        </article>
+        <% } %> 
+        <br>
+        </main>
+        
+        <%- include ('../partials/footer', {hojaDeEstilo: 'detail.css', titulo:'Detalle'}) %>  
+    </body>
+    </html>
+</body>
+</html>

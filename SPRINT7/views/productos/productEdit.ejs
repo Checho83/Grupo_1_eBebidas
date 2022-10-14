@@ -12,75 +12,77 @@
                             style="height: fit-content; width: 40%;">
                     </div>
 
-                    <form action="../productos/<%= indexProducto%>" method="POST" >
+                    <form class="productEdit" action="../productos/<%= indexProducto%>" method="POST" >
                         <br>
                             <h3>EDITAR EL PRODUCTO SELECCIONADO</h3>
                         <br>
-                        <div><label class="form1" for="id">ID producto:</label>
-                            <input type="number" name="id" value=<%=items.id%>>
-                        <br>
-                        <div><label class="form1" for="name">Nombre producto:</label>
-                            <input type="text" name="name" value=<%=items.name%>>
+                        <div class="campos-estilo">
+                            <label  for="id">ID producto:</label>
+                            <input class="form-input" type="number" name="id" value=<%=items.id%>>
                         </div>
-                        <BR>
-                        <div>
-                            <label class="form1" for="category">Categoría actual: <%=items.product_category.name %></label>
+                        <div class="campos-estilo">
+                            <label  for="name">Nombre producto:</label>
+                            <input class="form-input" type="text" name="name" value=<%=items.name%>>
                         </div>
-                        <select name="category">
+
+                        <div class="campos-estilo">
+                            <label  for="category">Categoría actual: <%=items.product_category.name %></label>
+                            <select name="category">
                             <% for(let index = 0; index < categories.length;index++) {%> 
                             <option value="<%=categories[index].dataValues.id%>"><%=categories[index].dataValues.name %></option>  
                             <% } %> 
-                        </select>
+                            </select>
                         </div>
-                        <BR>
-                        <div>
-                            <label class="form1" for="brand">Marca: <%=items.product_brand.name %></label>
-                        </div>
-                        <div>
-                        <select name="brand">
+                        
+                        <div class="campos-estilo">
+                            <label  for="brand">Marca: <%=items.product_brand.name %></label>
+                            <select name="brand">
                             <% for(let index = 0; index < brands.length;index++) {%> 
                             <option value="<%=brands[index].dataValues.id%>"><%=brands[index].dataValues.name %></option>  
-                        <% } %> 
-                        </select>
+                            <% } %> 
+                            </select>
                         </div>
-                        <BR>
-                        <div>
-                            <label class="form1" for="price">Precio del producto:$</label>
-                            <input type="number" name="price" value=<%=items.price%>>
+                        <br>
+
+                        <div class="campos-estilo">
+                            <label  for="price">Precio del producto:$</label>
+                            <input class="form-input" type="number" name="price" value=<%=items.price%>>
+                        </div>       
+                        
+                        <div class="campos-estilo">
+                            <label  for="discount">Descuento del producto:%</label>
+                            <input class="form-input" type="number" name="discount" value=<%=items.discount%>>
                         </div>
+
+                        <div class="campos-estilo">
+                            <label  for="oferta">Oferta - Valor actual: <%=items.offer%></label>
+                            <div><input type="radio" name="offer" value=SI >SI</div>
+                            <div><input type="radio" name="offer" value=NO >NO</div>
+                        </div>
+
                         <BR>
                      
-                        <div>
-                            <label class="form1" for="discount">Descuento del producto:%</label>
-                            <input type="number" name="discount" value=<%=items.discount%>>
-                        </div>
-                        <BR>
-                            <div><label  for="oferta">Oferta - Valor actual: <%=items.offer%></label></div>
-                        <div><input type="radio" name="offer" value=SI >SI
-                            <input type="radio" name="offer" value=NO >NO</div>
-                        </div>
-                        <BR>
-                     
-                        <div><label class="form1" for="stock">Stock del producto (unidades):</label>
-                        <input type="number" name="stock" value=<%=items.stock%>>
+                        <div class="campos-estilo">
+                            <label  for="stock">Stock del producto (unidades):</label>
+                            <input class="form-input" type="number" name="stock" value=<%=items.stock%>>
                         </div>
                         <br>
                         <div>
-                            <label class="form1" for="description">Descripción</label>
+                            <label  for="description">Descripción</label>
                         </div>
                         <div>
-                            <textarea name="description" rows="10" style="width:100%"><%=items.description%></textarea>
+                            <textarea class="form-text" name="description" rows="10" style="width:100%"><%=items.description%></textarea>
                         </div>
                         <BR>
-                       <div><label class="form1" for="image">Imagen de producto: <%=items.image%></label></div>
+                       <div><label  for="image">Imagen de producto: <%=items.image%></label></div>
          
                          <!-- <div><input type="file" id="name" name="image" accept=".jpg" multiple style="width: 90%;" ></div> -->
                         <BR>
                                           
-                        <div style="text-align: center" >
-                            <button style="text-align: center;font-size: 18px" type="submit">GUARDAR / EDITAR</button>
-                            <button style="text-align: center;font-size: 18px"  type="reset">CANCELAR</button>
-                            <a href="/productos/productList" style="text-decoration: none;"><input style="text-align: center;font-size: 18px"  type="button"  value="VOLVER"></a>
+                        <div class="buttons_contenedor">
+                            <div><button class="button" type="submit">GUARDAR / EDITAR</button></div>
+                            <div><button class="button"  type="reset">CANCELAR</button></div>
+                            <div><a href="/productos/productList" style="text-decoration: none;"><input class="button"  type="button"  value="VOLVER"></a></div>
                         </div>
                         <BR>  
                     </form> 
