@@ -20,56 +20,68 @@
                             <br>
                             <div><h3>EDITAR EL CLIENTE SELECCIONADO</h3></div>
                             <br>
-                            <div><label class="form1" for="id">ID cliente: <%=user.id%></label>
+                            <div class="campos-estilo">
+                                <label class="form1" for="id">ID cliente: <%=user.id%></label>
+                                
                             <!-- <input type="number" name="id" value=<%=user.id%>> -->
                             </div>
-                            <br>
-                            <div><label class="form1" for="firstName">Nombre:</label>
-                            <input type="text" name="firstName" value=<%=user.firstName%>>
+
+                            <div class="campos-estilo">
+                                <label class="form1" for="firstName">Nombre:</label>
+                                <input class="form-input" type="text" name="firstName" value="<%=user.firstName%>">
                             </div>
-                            <BR>
-                            <div><label class="form1" for="lastName">Apellido:</label>
-                            <input type="text" name="lastName" value=<%=user.lastName%>>
+                        
+                            <div class="campos-estilo">
+                                <label class="form1" for="lastName">Apellido:</label>
+                                <input class="form-input" type="text" name="lastName" value="<%=user.lastName%>">
                             </div>
-                            <BR>
-                            <div><label class="form1" for="email">email:</label>
-                            <input type="email" name="email" value=<%=user.email%>>
+
+                            <div class="campos-estilo">
+                                <label class="form1" for="email">email:</label>
+                                <input class="form-input" type="email" name="email" value=<%=user.email%>>
                             </div>
-                            <BR>
-                            <div><label class="form1" for="phone">Telefono:</label>
-                            <input type="number" name="phone" value=<%=user.phone%>>
+
+                            <div class="campos-estilo">
+                                <label class="form1" for="phone">Telefono:</label>
+                                <input class="form-input" type="number" name="phone" value=<%=user.phone%>>
                             </div>
-                            <BR>
-                            <div><label class="form1" for="address">Dirección:</label>
-                            <input type="text" name="address" value=<%=user.address%>>
+
+                            <div class="campos-estilo">
+                                <label class="form1" for="address">Dirección:</label>
+                                <input class="form-input" type="text" name="address" value="<%=user.address%>">
                             </div>
-                            <BR>
-                            <div><label class="form1" for="city">Ciudad:</label>
-                            <input type="text" name="city" value=<%=user.city%>>
+
+                            <div class="campos-estilo">
+                                <label class="form1" for="city">Ciudad:</label>
+                                <input class="form-input" type="text" name="city" value="<%=user.city%>">
                             </div>
-                            <BR>
-                            <div><label class="form1" for="province">Provincia:</label>
-                            <input type="text" name="province" value=<%=user.province%>>
+
+                            <div class="campos-estilo">
+                                <label class="form1" for="province">Provincia:</label>
+                                <input class="form-input" type="text" name="province" value="<%=user.province%>">
                             </div>
-                            <BR>
-                            <div><label class="form1" for="cp">Cp:</label>
-                            <input type="number" name="cp" value=<%=user.cp%>>
+
+                            <div class="campos-estilo">
+                                <label class="form1" for="cp">Cp:</label>
+                                <input class="form-input" type="number" name="cp" value=<%=user.cp%>>
                             </div>
-                            <BR>                 
-                            <div><label class="form1" for="birthdate">Fecha de nacimiento:</label>
-                            <input type="date" name="birthdate" value=<%=user.birthdate%>>
+               
+                            <div class="campos-estilo">
+                                <label class="form1" for="birthdate">Fecha de nacimiento:</label>
+                                <input class="form-input" type="date" name="birthdate" value=<%=user.birthdate%>>
                             </div>
-                            <div><label for="avatar">Imagen de perfil: <%=user.avatar%></label>   
-                            <input type="file" name="avatar" id="avatar" multiple style="font: size 16px;px ;">
+                            <div>
+                                <label for="avatar">Imagen de perfil: <%=user.avatar%></label>   
+                                <input type="file" name="avatar" id="avatar" multiple style="font: size 16px;px ;">
                                                                 <!-- <input type="file" name="avatar" accept=".jpg" multiple style="font-size:15px ;"  value=<%=user.avatar%>></div> -->
                             </div>
                
-                            <BR> 
+
                             
-                            <div style="text-align: center" >
-                                    <button style="text-align: center;font-size: 18px" type="submit">GUARDAR / EDITAR</button>   
-                                    <button style="text-align: center;font-size: 18px"  type="reset">CANCELAR</button>   
-                                    <a href="/user/userList" style="text-decoration: none;"><input style="text-align: center;font-size: 18px"  type="button"  value="VOLVER"></a>    
+                            <div class="buttons_contenedor" >
+                                    <div><button class="button"  type="submit">GUARDAR / EDITAR</button>  </div>    
+                                    <div><button class="button"   type="reset">CANCELAR</button> </div>  
+                                    <div><a href="/user/userList" style="text-decoration: none;"><input class="button" type="button"  value="VOLVER"></a></div>    
                             </div>
                             
                             <BR> 

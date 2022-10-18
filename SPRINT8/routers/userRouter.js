@@ -87,6 +87,8 @@ var storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+router.post('/contact', userController.respuesta);
+router.get('/contact', userController.contact);
 
 
 router.get('/login',guestMiddleware, userController.login);
@@ -98,6 +100,7 @@ router.post('/register', upload.single('avatar'),validateRegister, userControlle
 router.get('/register',guestMiddleware, userController.register);
 router.get('/contacto', userController.error);
 router.get('/Quienes_somos', userController.quienesSomos);
+router.get('/userPanel', userController.userPanel);
 router.get('/:id', adminMiddleware,userController.detail);
 router.post('/:id', upload.single('avatar'),userController.update);
 //router.post('/:id', userController.update);

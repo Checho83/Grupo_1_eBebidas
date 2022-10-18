@@ -77,6 +77,10 @@ Notas Versión SPRINT5:
  - Busqueda de productos en cada selección de la pagina principal
  - Desarrollo de REACT, tablero general en función de la API
  - Desarrollo de carrito de compras - funcionamiento parcial
+ - Desarrollo del buscador
+ - Incorporación de formulario de contacto
+ - Incorporación de whassapp
+ - Incorporación sección cocteleria
  
    correo: admin@admin.com
    pass:admin

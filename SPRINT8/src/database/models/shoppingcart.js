@@ -9,13 +9,13 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        items: {
+        qtyItems: {
             type: dataTypes.BIGINT(10).UNSIGNED,
-            allowNull: false,
+            allowNull: true,
         },
         totalPrice: {
             type: dataTypes.DECIMAL(8, 2).UNSIGNED,
-            allowNull: false
+            allowNull: true,
         },
         client_id: dataTypes.BIGINT(10),
     };
@@ -25,14 +25,14 @@ module.exports = (sequelize, dataTypes) => {
     const shoppingcart = sequelize.define(alias,cols,config);
 
      //Aquí debes realizar lo necesario para crear las relaciones con el modelo 
-       shoppingcart.associate = models =>{
+/*        shoppingcart.associate = models =>{
         shoppingcart.belongsTo(
         models.client,
         {
             as: 'cart_client',
             foreignKey:'client_id'
         }); 
-        }; 
+        };  */
 
 
     return shoppingcart;

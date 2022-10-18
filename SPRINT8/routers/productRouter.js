@@ -32,23 +32,26 @@ var storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-
+ 
 router.get('/productDetail', productController.view);
 router.get('/vinos', productController.view);
 router.get('/cervezas', productController.view);
 router.get('/destilados', productController.view);
-router.get('/cocteleria', productController.view);
+router.get('/cocteleria', productController.cocktail);
 router.get('/oferta:id', productController.view);
 //router.post('/productDetail', productController.parcialDetail);
 router.get('/productEdit', productController.edit);
 router.get('/productCreate', productController.create);
 router.post('/productCart/:id', productController.cart);
+router.delete('/productCartDelete/:id', productController.cartdelete);
 router.get('/productCart', productController.cartview);
 router.post('/productCreate',upload.single('image'), validateProduct, productController.store); 
-router.get('/productList', productController.list); 
+router.get('/productList', productController.list);
+router.get('/search', productController.searchBar); 
 router.post('/:id', upload.single('image'),productController.update); //update producto, desde productEdit
 router.get('/:id', adminMiddleware, productController.detail);                         //detalle de un producto, desde ProductEdit
 router.delete('/:id', productController.destroy); 
+
 
 
 

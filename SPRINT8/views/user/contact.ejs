@@ -1,0 +1,47 @@
+<html class="letra">
+<%- include ('../partials/head', {hojaDeEstilo: 'detail.css' , titulo:'registro'}) %>
+
+    <body>
+        <%- include ('../partials/header', {hojaDeEstilo: 'detail.css', titulo:'registro'}) %>
+            <main>
+                <br>
+                <article class="createProduct">
+                <form class="question" action="/user/contact" method="POST" enctype="multipart/form-data">
+                    <br>
+                    <h3 >Atendemos a tu consulta</h3>
+                    <div>
+                        <label  for="price">introcuce tu E-Mail</label> 
+                        <br>
+                                <input type="email"
+                                    name="email" 
+                                    id="email" 
+                                    size="40"
+                                >      
+                    </div>
+                    <br>
+                    <div class="ancho">
+                        <label  for="question">Detalla tu consulta:</label>
+                            <textarea 
+                                name="question" id="question"
+                                rows="10" style="width:100%"   
+                            ></textarea>
+
+                            
+                        <div class="buttons_contenedor">
+                           <div>
+                               <button class="button"  type="submit">Enviar consulta</button>
+                           </div>                   
+                        </div>
+                    </div>
+                    <br>
+                </form>
+                
+                </article>
+                <br>
+            </main>
+            <%- include ('../partials/footer', {hojaDeEstilo: 'detail.css' , titulo:'registro'}) %>
+
+            <script src="/js/answer.js"></script>  
+    </body>
+
+</html>

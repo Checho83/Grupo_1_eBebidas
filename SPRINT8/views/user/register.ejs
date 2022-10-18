@@ -20,7 +20,7 @@
                                 type="text"
                                 name="firstName"
                                 id="firstName" 
-                                size="40"
+                                size="30"
                                 class="form-input"
                                 <% if(locals.errors && errors.firstName){ %>  
                                     placeholder="<%= errors.firstName.msg %>"
@@ -33,10 +33,10 @@
                             <label for="lastName" >Apellido</label>
                             <br>
                             <input 
-                                type="text"
+                                type="text" 
                                 name="lastName"
                                 id="lastName" 
-                                size="40"
+                                size="30"
                                 class="form-input"
                                 <% if(locals.errors && errors.lastName){ %>  
                                     placeholder="<%= errors.lastName.msg %>"
@@ -51,23 +51,25 @@
                         <div class="campos-estilo" > 
                             <label for="email">Email</label>
                             <br>
-                                <input type="email"
+                                <input 
+                                    type="email"
                                     name="email" 
                                     id="email" 
-                                    size="40"
+                                    
                                     class="form-input"        
                                 <% if(locals.errors && errors.email){ %>  
                                     placeholder="<%= errors.email.msg %>"
                                 <% }else{ %>
                                     value="<%= locals.oldData ? oldData.email : null%>"
                                 <%} %> >             
-                        </div>
+                        </div>  
                         <div class="campos-estilo" > 
                             <label for="phone">Telefono</label>
                             <br>
-                                <input  type="number"
+                                <input  
+                                    type="number"
                                         name="phone"
-                                        size="40"
+                                        
                                         class="form-input"        
                                 <% if(locals.errors && errors.phone){ %>  
                                     placeholder="<%= errors.phone.msg %>"
@@ -134,7 +136,7 @@
                     <div  class="campos-estilo"> 
                         <label for="pass">Contraseña</label>
                         <div>
-                            <input   type="password" name="pass" id="pass" size="40" minlength="3" maxlength="15"
+                            <input   type="password" name="pass" id="pass" minlength="3" maxlength="15"
                             <%if (locals.errors && errors.pass) { %>
                                 class="form-input-error"
                                 <% }else{ %>
@@ -153,7 +155,7 @@
                         <label for="passVerif">Reingresar contraseña</label>
                         <div>
                             <input   type="password" name="passVerif" 
-                            id="passVerif" size="40" size="40"minlength="3" maxlength="15"
+                            id="passVerif" minlength="3" maxlength="15"
                             <%if (locals.errors && errors.passVerif) { %>
                                 class="form-input-error"
                                 <% }else{ %>

@@ -1,6 +1,9 @@
 window.addEventListener("load", function () {
 
+
     let avatarLogo = document.querySelector('#avatarLogo');  
+
+
 
     avatarLogo.addEventListener('click', function (event) {
         event.preventDefault();

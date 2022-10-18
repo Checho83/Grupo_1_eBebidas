@@ -62,6 +62,15 @@ module.exports = (sequelize, dataTypes) => {
     }
     const client = sequelize.define(alias,cols,config);
 
+/*     client.associate = models =>{
+        client.hasMany(
+        models.shoppingcart,
+        {
+            as: 'cart_client',
+            foreignKey:'client_id'
+        }); 
+        };  */
+
 
     return client;
 };

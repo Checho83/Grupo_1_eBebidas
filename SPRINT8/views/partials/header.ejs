@@ -4,8 +4,10 @@
         <a href="/" class="logo" ><img src="../images/logoebebidas.png" alt="Logo" title="Logo ebedidas" style="width: 30%;padding: 2%;" ></a>
 
         <i class="barra-contenedor" >
-                <input  size="22" type="text" class="barra">
-                <i class="fa fa-search" style="margin-left: -30px; cursor: pointer;"></i>
+            <form style="text-decoration: none;border: none;background: none;box-shadow: none;width: auto;padding: 0%;" action="/productos/search"  method="GET" >
+              <div style="display:flex;flex-wrap:nowrap"><input  class="searchBar greyPh" size="40" type="text" name="searchBar" placeholder="Cualquier bebida..." style="font-size: 16px;padding: 10px;border-radius: 15px;">
+                <button type="submit" style="padding: 0;border: none;background: none;"><i class="fa fa-search" style="margin-left: -40px; cursor: pointer"></i></button></div>  
+            </form>    
         </i>
         
 
@@ -19,7 +21,11 @@
             <div><a href="/user/register" style="text-decoration: none ;">Creá tu cuenta<i class="fas fa-user separarH"></i></a></div>
             <div><a href="/user/login" style="text-decoration: none;">Ingresá<i class="fas fa-sign-in-alt separarH"></i></a></div>
             <% }%>
-            <div ><a href="/productos/productCart" style="text-decoration: none;"><i class="fas fa-shopping-cart" style="padding-top:10px ;font-size: 25px;"></i></a></div> 
+            <%if (typeof userlog != 'undefined') { %>
+            <div ><a href="/productos/productCart" style="text-decoration: none;"><i class="fas fa-shopping-cart" style="padding-top:10px ;font-size: 25px;"></i></a>
+                  <i style="font-weight: bold;font-style: normal;"><%=userlog.shoppingCartQty %> </i> 
+                <% }%>   
+            </div> 
         </nav>  
 
     </div>
@@ -32,8 +38,9 @@
                 <a href="/user/Quienes_somos">Quienes somos</a>
                 <%if ((typeof userlog != 'undefined')&&(userlog.email == 'admin@admin.com')){ %>
                     <a href="/createEdit">Panel Admin</a>
-                <% }%> 
-                <a href="/user/Contacto">Contacto</a>
+                <% } else if (typeof userlog != 'undefined') {%> 
+                    <a href="/user/userPanel">Usuario</a>
+                <% } %>
 
         </div>
         <i class="fa-regular fa-cart-shopping"></i>

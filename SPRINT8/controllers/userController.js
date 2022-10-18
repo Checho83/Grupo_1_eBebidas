@@ -10,6 +10,8 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
 const client = db.client;
+const shoppingcart = db.shoppingcart;
+const shoppingcartproduct = db.shoppingcartproduct;
 
 
 
@@ -37,37 +39,67 @@ const userController = {
       })
     }
 
-    client.findOne({ where: { email: req.body.email } })
+
+      client.findOne({ where: { email: req.body.email } })
       .then((userToLogin) => {
-
-        //let userToLogin = User.findByField('email',req.body.email);
-
-        
 
         if (userToLogin) {      //si no es null...
 
-          userToLogin = userToLogin.dataValues;
-
-          // console.log(userToLogin.email); 
+          userToLogin = userToLogin.dataValues; 
 
           let passOK = bcrypt.compareSync(req.body.pass, userToLogin.pass)
           if (passOK) {
-            delete userToLogin.pass;
 
-            res.locals.isLogged = true;
-            req.session.userLogged = userToLogin;
-            console.log (req.session.userLogged);
-            //  res.locals.userLogged = req.session.userLogged;
-            //  console.log (res.locals.userLogged);
 
-            if (req.body.recordame != undefined)
-              res.cookie('recordame', userToLogin.email, { maxAge: 100000 })
+            shoppingcart.findOne({ where: { client_id : userToLogin.id } })
+            .then(shopCart =>{
 
-            if (userToLogin.email == 'admin@admin.com') {
-              return res.render('createEdit',{userlog: req.session.userLogged});
-            } else {
-              return res.redirect('../');
-            }
+              delete userToLogin.pass;
+
+              res.locals.isLogged = true;
+
+              if(shopCart){       //veo que las variables esten disponibles en toda la sesion
+                userToLogin.shoppingCartId = shopCart.id
+                userToLogin.shoppingCartQty = shopCart.qtyItems;
+
+              } else {      //no existe el shopping cart para ese ID, lo creamos
+
+/*                 let shopCart = {
+                  qtyItems:0,
+                  totalPrice:0,
+                  client_id:userToLogin.id
+                }
+      
+                shoppingcart.create(shopCart)     //creo e inicializo las variables de la sesion
+                .then(()=>{
+
+                  shoppingcart.findOne({ where:{client_id:userToLogin.id}})
+                  .then(shopCart=>{
+                    userToLogin.shoppingCartId = shopCart.id
+                    userToLogin.shoppingCartQty = shopCart.qtyItems;
+                  })
+
+                }) */
+
+              }
+
+              req.session.userLogged = userToLogin;
+            //  console.log (req.session.userLogged);
+
+            console.log(req.session.userLogged.shoppingCartId);
+
+              if (req.body.recordame != undefined)
+                res.cookie('recordame', userToLogin.email, { maxAge: 100000 })
+
+              if (userToLogin.email == 'admin@admin.com') {
+                return res.render('createEdit',{userlog: req.session.userLogged});
+              } else {
+                console.log("reenviando a home");
+                return res.redirect('../');
+              }
+
+            })
+            
 
           } else {
             return res.render('user/login', {
@@ -78,21 +110,21 @@ const userController = {
               }
             });
           }
+        } else {
+
+          return res.render('user/login', {
+            errors: {
+              email: {
+                msg: 'Email no registrado'
+              }
+            }    
+          });
+
         }
-        
-        return res.render('user/login', {
-          errors: {
-            email: {
-              msg: 'Email no registrado'
-            }
-          }    
-        });
+  
 
-
-      });
-
-
-
+      })
+      .catch(error => res.send(error));
 
     },
     register:(req,res)=>{
@@ -150,9 +182,22 @@ const userController = {
          console.log(userToCreate);
          
           client.create(userToCreate)
-          .then(()=> {
-            console.log('Registro hecho');
-            return res.redirect('/user/login')})     //volvemos a la pagina de productos       
+          .then(user=> {
+           //   console.log(user);
+
+            let shopCart = {    //ASIGNAMOS EL CARRITO DE COMPRAS A CADA USUARIO CREADO
+              qtyItems:0,
+              totalPrice:0,
+              client_id:user.id
+            }
+  
+            shoppingcart.create(shopCart)
+            .then(()=>{
+              console.log('Registro hecho');
+              return res.redirect('/user/login')
+            })     //volvemos a la pagina de productos     
+            
+          })    
           .catch(error => res.send(error))
 
 
@@ -189,7 +234,7 @@ const userController = {
       }
  
 
-      console.log(userToedit);
+     // console.log(userToedit);
       
       client.update(userToedit, {where:{id:req.params.id}})
       .then(() => {
@@ -200,15 +245,51 @@ const userController = {
     
 
     },
+    userPanel:(req, res) =>{
+      
+      let indexClient = req.session.userLogged.id;
+
+      client.findByPk(indexClient)
+      .then(client => {
+        console.log(client);
+        res.render('user/userEdit',{user:client.dataValues, userlog:req.session.userLogged,indexClient});
+      });
+
+    },  
     delete:(req, res) =>{
     
     let indexClient = req.params.id;
 
-      client.destroy({where:{id:indexClient}})
-      .then(() => {
-     //  console.log(client);
-       return res.redirect("userList");
-      });
+    shoppingcart.findOne({where:{client_id:req.params.id}})     //busco el carrito de compras para saber el id del carrito de compras a borrar
+      .then(ShopCart=>{
+
+        if(ShopCart) {      //cliente con carrito de compras
+          shoppingcartproduct.destroy({where:{shoppingCart_id: ShopCart.id}})
+          .then(()=>{
+            shoppingcart.destroy({where:{client_id:req.params.id}})
+            .then(()=>{
+
+              client.destroy({where:{id:indexClient}})
+              .then(() => {
+           //  console.log(client);
+             return res.redirect("userList");
+              });
+            })
+
+          })
+        } else {          //sin carrito de compras, borro directamente el usuario
+            client.destroy({where:{id:indexClient}})
+            .then(() => {
+            return res.redirect("userList");
+          });
+        }  
+
+
+        })
+  
+
+
+
     },
     detail:(req, res) =>{
 
@@ -221,6 +302,21 @@ const userController = {
       });
       
     },
+
+
+    contact:(req,res)=>{
+      res.render('user/contact');
+     
+    },
+    respuesta:(req,res)=>{
+     console.log('entre');
+     res.redirect('/');
+    
+   },
+
+
+
+
     logout:(req, res) =>{
 
       delete req.session.userLogged;

@@ -91,54 +91,128 @@ const productController = {
 	edit: (req, res) => {
 		return res.render('productos/productCreate');
 	},
-    cart:(req,res)=>{
+    cart:(req,res)=>{		//agrega productos en el carrito
 	
+		console.log("en el carrito")
 
-		let ProductCart = {
-			products_id: req.params.id,
-			qty: req.body.cantidad,
-			shoppingCart_id : 1,
+		if(req.session.userLogged){
+
+		//	shoppingcart.findOne({ where: { client_id: req.session.userLogged.id},include:[{association: "cart_client"}]})
+			shoppingcart.findOne({ where: { client_id: req.session.userLogged.id}})
+			.then(shopCart=>{
+				
+				if(shopCart){			//si hay shopping cart para el id del cliente, entonces almacenamos los datos del shopping cart product
+
+					req.session.userLogged.shoppingCartId = shopCart.id;  //el ID del carrito pasa a estar disponible en toda la sesion
+
+					let ProductCart = {
+						products_id: req.params.id,
+						qty: req.body.cantidad,
+						shoppingCart_id : shopCart.id,
+					}
+			
+					shoppingcartproduct.findOne({ where: { products_id: req.params.id, shoppingCart_id : shopCart.id} })
+					.then(product=>{
+			
+						if (product === null) {			//si es NULL, el producto no esta en el carrito, aumento el contador
+		
+
+							shoppingcartproduct.create(ProductCart)
+							.then(()=> {
+							  console.log('Producto agregado');
+							  return res.redirect('../productDetail');
+							})     //volvemos a la pagina de productos       
+							.catch(error => res.send(error))
+
+							req.session.userLogged.shoppingCartQty = req.session.userLogged.shoppingCartQty + 1;
+
+							let cartUpdate ={			
+								qtyItems : req.session.userLogged.shoppingCartQty
+							}
+
+							shoppingcart.update(cartUpdate,{where:{id: req.session.userLogged.shoppingCartId}})
+
+						} else {
+			
+						//	console.log(product.dataValues.qty );
+							ProductCart.qty = product.dataValues.qty + parseInt(req.body.cantidad);		//actualizamos la cantidad si el product_id se repite
+			
+							product.update(ProductCart,{
+								where:{products_id: req.params.id}})
+							.then(() => {
+								
+								return res.redirect('../productDetail')
+							})
+							.catch(error => res.send(error))	
+						}
+					})
+/* 					.then(()=>{
+
+						shoppingcartproduct.findAll({ where: {shoppingCart_id : shopCart.id} })			//para actualizar la cantidad de productos
+						.then(shopCartQty=>{
+							console.log("Cantidad de productos para el ID");		
+							console.log(shopCartQty.length);		//cantidad de productos en el carrito
+							shopCart.qtyItems = shopCartQty.length;
+
+						})
+
+					}) */
+
+				} else {  //si NO hay shopping cart para el id del cliente, creamos el id para el cliente y almacenamos el producto
+
+					let shopCart = {
+						qtyItems:1,		//al menos estamos agregando 1
+						totalPrice:0,
+						client_id:req.session.userLogged.id
+					}
+
+					shoppingcart.create(shopCart)
+					.then(shopCart=>{
+
+						req.session.userLogged.shoppingCartId = shopCart.id;  //el ID del carrito pasa a estar disponible en toda la sesion
+
+						let ProductCart = {
+							products_id: req.params.id,
+							qty: req.body.cantidad,
+							shoppingCart_id : shopCart.id,
+						}
+					//	console.log(ProductCart);
+
+						shoppingcartproduct.create(ProductCart)
+						.then(()=> {
+						  console.log('Producto agregado');
+						  req.session.userLogged.shoppingCart = req.session.userLogged.shoppingCart + 1;
+						  return res.redirect('../productDetail');
+						})     //volvemos a la pagina de productos       
+						.catch(error => res.send(error))
+						
+
+					})
+
+						
+
+				}
+
+
+			})
 		}
-
-		shoppingcartproduct.findOne({ where: { products_id: req.params.id, shoppingCart_id : 1 } })
-		.then(product=>{
-
-			if (product === null) {
-
-				shoppingcartproduct.create(ProductCart)
-				.then(()=> {
-				  console.log('Producto agregado');
-				  return res.redirect('../productDetail');
-				})     //volvemos a la pagina de productos       
-				.catch(error => res.send(error))
-			} else{
-
-				console.log(product.dataValues.qty );
-				ProductCart.qty = product.dataValues.qty + parseInt(req.body.cantidad);		//actualizamos la cantidad si el product_id se repite
-
-				product.update(ProductCart,{
-					where:{products_id: req.params.id}})
-				.then(() => {
-					
-					return res.redirect('../productDetail')
-				 // res.render('user/userEdit',{user:client.dataValues, indexClient});
-				});	
-			}
-		})
 
 
      	return;
      },	
-	 cartview: (req, res) => {
+	 cartview: (req, res) => {		//solo se muestra el carrito si esta logueado
 
-		console.log("En el carrito2");
+		console.log("En el carrito");
+		console.log(req.session.userLogged.shoppingCartId)
 
-		shoppingcartproduct.findAll({where:{shoppingCart_id : 1},include:[{association: "cartProducts"}]})
+		shoppingcartproduct.findAll({where:{shoppingCart_id : req.session.userLogged.shoppingCartId},include:[{association: "cartProducts"}]})
 		.then(productsCart=> {
-		//	console.log(productsCart[0].qty);
-		// console.log(productsCart[0].cartProducts.dataValues.image);
-		// return res.redirect('../productDetail')
-		 return res.render('productos/productCart',{productos:productsCart,userlog: req.session.userLogged});
+			if 	(productsCart){
+				return res.render('productos/productCart',{productos:productsCart,userlog: req.session.userLogged});
+			} else {
+				res.send("No hay items")
+			}
+		 		
 		})     //volvemos a la pagina de productos       
 		.catch(error => res.send(error))
 
@@ -246,7 +320,28 @@ const productController = {
 		})
 
 	},
+	cartdelete: (req, res) => {
 
+		shoppingcartproduct.destroy({where:{id:req.params.id}})
+		.then(() => {
+			shoppingcartproduct.findAll({where:{shoppingCart_id : req.session.userLogged.shoppingCartId},include:[{association: "cartProducts"}]})
+			.then(productsCart=> {
+				req.session.userLogged.shoppingCartQty = productsCart.length;
+
+				let cartUpdate ={			
+					qtyItems : req.session.userLogged.shoppingCartQty		//actualizo la cantidad de items en el shoppingCart
+				}
+
+				shoppingcart.update(cartUpdate,{where:{id: req.session.userLogged.shoppingCartId}})
+
+				return res.redirect("/productos/productCart");
+			// return res.render('productos/productCart',{productos:productsCart,userlog: req.session.userLogged});
+			})     //volvemos a la pagina de productos       
+			.catch(error => res.send(error))
+		})
+
+
+	},
 	list: (req, res) => {
 		
 		product.findAll({
@@ -287,8 +382,8 @@ const productController = {
 		})
 		.then(()=>{
 
-		console.log(brand_data);
-		console.log(category_data);
+		//console.log(brand_data);
+		//console.log(category_data);
 		product.findByPk(indexProduct, {include:[{association: "product_brand"},{association: "product_category"}]})
 		.then(product => {
 		  return res.render('productos/productEdit',{items:product.dataValues, indexProducto:indexProduct, brands:brand_data,categories:category_data,userlog: req.session.userLogged });
@@ -296,7 +391,32 @@ const productController = {
 		})
 
 
-	}
+	},
+	searchBar: (req, res) => {
+
+	
+	let searchStr = req.query.searchBar;
+
+		product.findAll(
+			{where: {
+				[Op.or]: [
+				{name:{[Op.substring]:searchStr}},
+				{'$product_category.name$':{[Op.substring]:searchStr}}]
+				},
+			 include:[{association: "product_brand"},{association: "product_category"}]})
+		.then(products => {
+			//console.log(products);
+			return res.render('productos/productDetail', {productos: products,userlog: req.session.userLogged});
+	  	})
+
+	},
+
+	cocktail: (req , res) =>{
+		console.log("en listaaa")
+
+		res.render('productos/cocteleria');
+	},
+
 } 
 	
 

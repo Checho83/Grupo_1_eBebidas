@@ -23,7 +23,7 @@ window.addEventListener("load", function () {
 
     let errors = [];
 
-console.log(placeholderColor);
+//console.log(placeholderColor);
 
 for (let indice = 0; indice < placeholderColor.length; indice++) {
   placeholderColor[indice].classList.add("redPh");

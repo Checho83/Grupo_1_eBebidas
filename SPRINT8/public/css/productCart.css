@@ -5,6 +5,32 @@
     font-size: 15px;
 }
 
+/* placeholder color */
+.greyPH::placeholder{
+    color:grey;
+}
+
+.redpH::placeholder{
+    color:red;
+}
+.whatsapp {
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+  }
+  
+  .whatsapp-icon {
+    margin-top:13px;
+  }
+
 .avatar {
     vertical-align: middle;
     width: 50px;
@@ -310,12 +336,12 @@ main{
     font-size: 1rem;
 }
 
-.fa {
+/* .fa {
     background-color:;
     color: black;
     border-radius: 5px;
 }
-
+ */
 .carrito{
     font-size: 100%;
 }

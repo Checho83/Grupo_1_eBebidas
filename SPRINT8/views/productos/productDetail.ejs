@@ -5,7 +5,9 @@
         <%- include ('../partials/header', {hojaDeEstilo: 'detail.css', titulo:'Detalle'}) %>  
        
         <main>
+
             <br>
+            <%if ((typeof productos != 'undefined')&&(productos.length > 0)) { %>
             <% for(let item of productos) {%> 
         
        
@@ -20,7 +22,7 @@
             </div>
             <div style="width:35%;text-align: center;padding: 2%;">
                 <div style="font-weight:bold;">Precio: $<%= item.price %></div>
-            <form action="/productos/productCart/<%= item.id %>"  method="POST" >
+            <form action="/productos/productCart/<%= item.id %>"  onsubmit="myFunction()" method="POST" >
                     <label >Cantidad</label>
                     <select name="cantidad">
                         <option value="1">1</option>
@@ -34,15 +36,23 @@
                         <option value="9">9</option>
                         <option value="10">10</option>
                     </select> 
-                <div><button type="submit" style="margin-top:2%">Añadir al carrito</button></div>
+                    <%if (typeof userlog != 'undefined') { %>
+                        <div><button  type="submit" style="margin:2%;padding:2%;border-radius: 5px;" >Añadir al carrito</button></div>
+                <% }else {%>   
+                        <div><button  type="" style="margin:2%;padding:2%;border-radius: 5px;" onclick="return alert('Debes loguearte para poder comprar');">Añadir al carrito</button></div>    
+                    <% }%>  
             </form>             
             </div>        
         </article>
         <% } %> 
+        <% }else {%>  
+            <h4 style="color:white">No hay resultados para mostrar...</h4>
+        <% }%>    
         <br>
         </main>
         
         <%- include ('../partials/footer', {hojaDeEstilo: 'detail.css', titulo:'Detalle'}) %>  
+
     </body>
     </html>
 </body>

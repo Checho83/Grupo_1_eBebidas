@@ -5,6 +5,7 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
 const client = db.client;
+const shoppingcart = db.shoppingcart;
 
 function userLoggedMiddleware(req, res, next){
 
@@ -14,8 +15,8 @@ function userLoggedMiddleware(req, res, next){
 
         client.findOne({ where: { email: req.cookies.recordame } })
         .then((userToLogin) => {
-
-         console.log(userToLogin);
+            console.log('cliente recordado...');
+     //    console.log(userToLogin);
   
         if (userToLogin){
             userToLogin = userToLogin.dataValues; 
@@ -23,12 +24,27 @@ function userLoggedMiddleware(req, res, next){
             req.session.userLogged = userToLogin;
         //    res.locals.userLogged = req.session.userLogged;
         }   
-  
-        });      
 
+        
+        shoppingcart.findOne({ where: { client_id : req.session.userLogged.id } })
+        .then(shopCart =>{
+
+          if(shopCart){       //veo que las variables esten disponibles en toda la sesion
+            req.session.userLogged.shoppingCartId = shopCart.id
+            req.session.userLogged.shoppingCartQty = shopCart.qtyItems;
+            
+          } 
+          })
+          .then(()=>{
+            next();
+          })      
+
+        })
+
+    } else {
+        next();
     }
     
-    next();
 }
 
 module.exports = userLoggedMiddleware;
